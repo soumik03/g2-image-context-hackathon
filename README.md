@@ -7,6 +7,24 @@ The pipeline takes **one reference product image + geography + season + required
 - **Design, results, limitations:** [SOLUTION_DETAILS.md](SOLUTION_DETAILS.md)
 - **AI/coding-agent disclosure:** [AI_DECLARATION_SUMMARY.md](AI_DECLARATION_SUMMARY.md) (full trace in [AGENT_LOG.md](AGENT_LOG.md))
 
+## Reviewer Quick Start
+
+**No local setup is required to understand the submission.** All design documents, recorded results and real outputs are committed. Suggested inspection order:
+
+1. **[SOLUTION_DETAILS.md](SOLUTION_DETAILS.md):** architecture, design evolution, success criteria, evidence and limitations.
+2. **[experiments/composite20/report.md](experiments/composite20/report.md):** the recorded 20-output experiment and its results. It shows the original live results (rules v1: 9 PASS / 11 FAIL) and, separately labelled, an **offline recomputation** under the current composite policy v2 (15 PASS / 5 FAIL, 7 recorded evaluator disagreements, 0 new API calls).
+3. **[golden/real/](golden/real/):** the real baseline FAIL (redraw strategy) and the real composite PASS, each with its `metadata.json` and `evaluation.json`.
+4. **[AI_DECLARATION_SUMMARY.md](AI_DECLARATION_SUMMARY.md):** AI and coding-agent disclosure.
+5. **Optional, to reproduce:** `python -m pytest -q` runs offline and needs no API key (see [Setup](#setup)).
+
+Rule versions: the current evaluator policy is **v2** (the v1 rules plus the composite product-preservation rule). The golden dataset's expected outcomes are historical and authored against **v1**. The v2 numbers for the 20-output experiment are an offline recomputation from the same stored artifacts, not a new live run.
+
+### See the proof
+
+- **Real baseline FAIL** (redraw; emblem and branding altered by the generator): [golden/real/sneaker-tokyo-winter_20260926T060958_761600Z/ad.jpg](golden/real/sneaker-tokyo-winter_20260926T060958_761600Z/ad.jpg)
+- **Real composite PASS** (exact product pixels + Gemini scene; accepted after one context correction): [golden/real/sneaker-tokyo-winter_20260926T093146_984333Z_attempt-02/ad.png](golden/real/sneaker-tokyo-winter_20260926T093146_984333Z_attempt-02/ad.png)
+- **20-output experiment report:** [experiments/composite20/report.md](experiments/composite20/report.md)
+
 ## Setup
 
 ```bash
