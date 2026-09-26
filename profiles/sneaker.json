@@ -1,0 +1,81 @@
+{
+  "profile_version": 1,
+  "reference_image": "inputs/products/sneaker.jpg",
+  "reference_image_sha256": "9bed45b635966ba9f2987c624a6526d6223b3e93b7bb3a6a64a1e5940398030f",
+  "human_verified": true,
+  "verified_by": "Soumik Datta",
+  "verified_at": "2026-09-26",
+  "review_notes": [
+    "Manually reviewed against the reference image inputs/products/sneaker.jpg.",
+    "Distinctive side-emblem geometry explicitly corrected: asymmetric elongated four-pointed emblem, not a five-point star.",
+    "Branding explicitly corrected to 'COMET'; insole branding set non-critical.",
+    "Combined colorway split into upper, sole and laces; toe perforations, tongue tab and sole sidewall texture added; draft insole_art and eyelets entries removed.",
+    "2026-09-26 correction (Soumik Datta): removed sidewall texture from the critical 'sole' description so the texture is judged only by the non-critical 'sole_sidewall_texture' attribute (avoids double-counting)."
+  ],
+  "derived_from_draft": "profiles/sneaker.draft.json",
+  "product_category": "pair of low-top sneakers",
+  "attributes": [
+    {
+      "id": "silhouette",
+      "kind": "shape",
+      "critical": true,
+      "description": "Low-top sneaker silhouette with a rounded toe box, padded tongue/collar, and thick flat rubber cupsole."
+    },
+    {
+      "id": "upper",
+      "kind": "color_material",
+      "critical": true,
+      "description": "Light sky-blue glossy upper with smooth/patent-like finish."
+    },
+    {
+      "id": "sole",
+      "kind": "color_material",
+      "critical": true,
+      "description": "Medium-to-dark blue rubber cupsole."
+    },
+    {
+      "id": "laces",
+      "kind": "color_material",
+      "critical": false,
+      "description": "Royal-blue flat shoelaces."
+    },
+    {
+      "id": "side_emblem",
+      "kind": "mark",
+      "critical": true,
+      "description": "Distinctive yellow elongated four-pointed emblem on the lateral side panel. It has a vertically elongated lower point extending downward toward the sole and a shorter horizontal point; its geometry is asymmetric and should not be replaced by a conventional five-point star."
+    },
+    {
+      "id": "toe_perforations",
+      "kind": "detail",
+      "critical": false,
+      "description": "Multiple small perforation holes arranged in rows across the toe box."
+    },
+    {
+      "id": "tongue_tab",
+      "kind": "detail",
+      "critical": false,
+      "description": "Small yellow tab/detail near the upper portion of the tongue."
+    },
+    {
+      "id": "sole_sidewall_texture",
+      "kind": "detail",
+      "critical": false,
+      "description": "Clearly visible ribbed/textured pattern along the blue sole sidewall."
+    }
+  ],
+  "branding": [
+    {
+      "id": "tongue_label",
+      "text": "COMET",
+      "location": "Center area of the tongue patch",
+      "critical": true
+    },
+    {
+      "id": "insole_text",
+      "text": "COMET",
+      "location": "Printed on the visible insole/inner footbed area",
+      "critical": false
+    }
+  ]
+}

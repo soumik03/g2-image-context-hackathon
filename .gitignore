@@ -1,0 +1,13 @@
+# Virtual environment
+.venv/
+
+# Secrets (real API key lives here; never commit)
+.env
+
+# Python bytecode / caches
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Generated runs (golden-dataset images will live in a separate committed folder)
+outputs/

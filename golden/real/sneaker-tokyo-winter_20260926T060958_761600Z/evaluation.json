@@ -1,0 +1,493 @@
+{
+  "schema_version": 1,
+  "rules_version": "1",
+  "policy_snapshot": {
+    "rules_version": "1",
+    "text": {
+      "case_sensitive": true,
+      "required_occurrences": 1,
+      "fail_on_extra_ad_copy": true
+    },
+    "product": {
+      "same_product_fail_codes": {
+        "partially": "PRODUCT_DESIGN_DEVIATION",
+        "no": "PRODUCT_REPLACED"
+      },
+      "critical_attribute_codes": {
+        "mark": {
+          "altered": "PRODUCT_MARK_ALTERED",
+          "missing": "PRODUCT_MARK_MISSING"
+        },
+        "color_material": {
+          "altered": "PRODUCT_COLOR_MATERIAL_ALTERED",
+          "missing": "PRODUCT_COLOR_MATERIAL_ALTERED"
+        },
+        "shape": {
+          "altered": "PRODUCT_SHAPE_ALTERED",
+          "missing": "PRODUCT_SHAPE_ALTERED"
+        },
+        "detail": {
+          "altered": "PRODUCT_DETAIL_ALTERED",
+          "missing": "PRODUCT_DETAIL_ALTERED"
+        }
+      },
+      "branding_fail_statuses": [
+        "legible_different",
+        "illegible_or_garbled"
+      ],
+      "fail_when_all_critical_not_visible": true
+    },
+    "context": {
+      "geography_pass_ratings": [
+        "strong"
+      ],
+      "season_pass_ratings": [
+        "strong"
+      ],
+      "season_conflict_fail_prominence": [
+        "prominent"
+      ]
+    }
+  },
+  "run_dir": "outputs\\sneaker-tokyo-winter\\20260926T060958_761600Z",
+  "evaluator_model": "gemini-3.1-flash-lite",
+  "profile": {
+    "file": "sneaker.json",
+    "reference_image_sha256": "9bed45b635966ba9f2987c624a6526d6223b3e93b7bb3a6a64a1e5940398030f",
+    "human_verified": true,
+    "verified_by": "Soumik Datta"
+  },
+  "verdict": "FAIL",
+  "reasons": [
+    "PRODUCT_COLOR_MATERIAL_ALTERED",
+    "PRODUCT_MARK_ALTERED",
+    "PRODUCT_BRANDING_DISTORTED",
+    "PRODUCT_DESIGN_DEVIATION",
+    "CONTEXT_GEO_WEAK",
+    "CONTEXT_SEASON_CONTRADICTORY",
+    "CONTEXT_SEASON_CONFLICT"
+  ],
+  "error": null,
+  "checks": {
+    "technical": {
+      "verdict": "PASS",
+      "reasons": [],
+      "resolution": [
+        1024,
+        1024
+      ]
+    },
+    "text": {
+      "verdict": "PASS",
+      "reasons": [],
+      "required": "Step Into Winter",
+      "ad_text": "Step Into Winter",
+      "occurrences": 1,
+      "extra_ad_copy": "",
+      "similarity": 1.0
+    },
+    "product": {
+      "verdict": "FAIL",
+      "reasons": [
+        {
+          "code": "PRODUCT_COLOR_MATERIAL_ALTERED",
+          "id": "sole",
+          "evidence": "Medium-blue rubber cupsole, color matches, but missing the distinctive ribbed/textured vertical sidewall detail."
+        },
+        {
+          "code": "PRODUCT_MARK_ALTERED",
+          "id": "side_emblem",
+          "evidence": "The emblem is a five-pointed star rather than the reference four-pointed asymmetric emblem."
+        },
+        {
+          "code": "PRODUCT_BRANDING_DISTORTED",
+          "id": "tongue_label",
+          "expected": "COMET",
+          "observed_text": "JOMET",
+          "evidence": "Text on the tongue patch is JOMET, not COMET."
+        },
+        {
+          "code": "PRODUCT_DESIGN_DEVIATION",
+          "evidence": "The product shares the same colorway and general low-top silhouette but the side emblem shape (five-pointed star vs four-pointed asymmetric star) and branding (JOMET vs COMET) are different."
+        }
+      ],
+      "same_product": "partially",
+      "attributes": {
+        "silhouette": "preserved",
+        "upper": "preserved",
+        "sole": "altered",
+        "laces": "preserved",
+        "side_emblem": "altered",
+        "toe_perforations": "preserved",
+        "tongue_tab": "altered",
+        "sole_sidewall_texture": "missing"
+      },
+      "branding": {
+        "tongue_label": "legible_different",
+        "insole_text": "not_visible"
+      },
+      "recorded": [
+        {
+          "code": "PRODUCT_MINOR_DEVIATION",
+          "id": "tongue_tab",
+          "status": "altered",
+          "evidence": "The tongue tab is present but appears flat and lacks the specific yellow tab detail."
+        },
+        {
+          "code": "PRODUCT_MINOR_DEVIATION",
+          "id": "sole_sidewall_texture",
+          "status": "missing",
+          "evidence": "The sidewall is smooth instead of ribbed/textured."
+        },
+        {
+          "code": "PRODUCT_NOT_VISIBLE",
+          "id": "insole_text"
+        }
+      ],
+      "reclassified": []
+    },
+    "context": {
+      "verdict": "FAIL",
+      "reasons": [
+        {
+          "code": "CONTEXT_GEO_WEAK",
+          "cues": [
+            "Architecture and signage visible through the window suggest an urban setting, possibly East Asian style buildings."
+          ],
+          "contradicting_cues": []
+        },
+        {
+          "code": "CONTEXT_SEASON_CONTRADICTORY",
+          "cues": [
+            "Snow on the ground",
+            "Frost-covered window glass",
+            "Snow particles in the air"
+          ]
+        },
+        {
+          "code": "CONTEXT_SEASON_CONFLICT",
+          "cue": "Cherry blossoms on the branches outside the window",
+          "reason": "Cherry blossoms are a classic indicator of Spring, not Winter."
+        }
+      ],
+      "geography": {
+        "rating": "weak",
+        "cues": [
+          "Architecture and signage visible through the window suggest an urban setting, possibly East Asian style buildings."
+        ],
+        "contradicting_cues": []
+      },
+      "season": {
+        "rating": "contradictory",
+        "cues": [
+          "Snow on the ground",
+          "Frost-covered window glass",
+          "Snow particles in the air"
+        ],
+        "conflicting_cues": [
+          {
+            "cue": "Cherry blossoms on the branches outside the window",
+            "prominence": "prominent",
+            "reason": "Cherry blossoms are a classic indicator of Spring, not Winter."
+          }
+        ]
+      },
+      "recorded": []
+    }
+  },
+  "request_summary": {
+    "model": "gemini-3.1-flash-lite",
+    "input": [
+      {
+        "type": "text",
+        "text": "You are a meticulous visual inspector. You report observations only. You never decide whether an image passes or fails.\n\nYou receive:\n1. REFERENCE IMAGE: the real product.\n2. GENERATED ADVERTISEMENT: an advertisement image that should feature the same product.\n3. REFERENCE PROFILE: a human-verified checklist of the product's attributes and branding (below).\n4. TARGET CONTEXT: the intended geography and season (below).\n\nComplete three independent sections. Do not let your findings in one section influence another.\n\nSECTION \"text\" (look only at the GENERATED ADVERTISEMENT)\n- Transcribe every piece of visible text literally, exactly as it appears, including misspellings, missing or extra letters, unusual capitalization and punctuation. Never correct, complete or guess text.\n- List items in natural reading order (top to bottom, left to right). A single phrase broken across lines is one item; join its lines with a single space.\n- Classify each item's role:\n  - headline_or_ad_text: advertising copy placed on the image (headlines, slogans, prices, calls to action, badges).\n  - product_branding: text physically printed on or attached to the product.\n  - background_incidental: text that belongs to the scene (shop signs, posters, packaging, street signs).\n- If text is present but partly unreadable, transcribe what you can and write \"?\" for each unreadable character.\n- If there is no visible text, return an empty list.\n\nSECTION \"product\" (compare the product in the GENERATED ADVERTISEMENT with the REFERENCE IMAGE, using the REFERENCE PROFILE as the checklist)\n- For every attribute in the profile, using its exact id, give concrete evidence and a status:\n  - preserved: clearly visible and matches the reference.\n  - altered: visible but different in shape, geometry, color, material, position or proportions.\n  - missing: the area where it belongs is visible, but the attribute is absent.\n  - not_visible: that area of the product cannot be seen (angle, cropping, occlusion).\n- For every branding item in the profile, using its exact id, give the text you actually read, concrete evidence and a status:\n  - legible_correct: readable and identical to the profile text.\n  - legible_different: readable but different from the profile text.\n  - illegible_or_garbled: present but distorted, malformed or unreadable.\n  - not_visible: that location cannot be seen.\n- genuinely_added_marks_or_logos: list only marks, logos, symbols or branding ON THE PRODUCT that have no counterpart in the reference. A mark located where a reference mark belongs but looking different is an ALTERED reference attribute: report it under that attribute, not here. If you are unsure whether a mark is an altered reference mark, list it here and set possible_reference_counterpart_id to that attribute's id; otherwise use \"\".\n- same_product: yes (clearly the same product), partially (same type but noticeably different design), no (a different product). Give concrete evidence.\n- Evidence must be specific and checkable, for example \"yellow five-pointed star with a lightning-bolt tail on the side panel\". Never write vague statements such as \"looks similar\" or \"looks appropriate\".\n\nSECTION \"context\" (look only at the scene of the GENERATED ADVERTISEMENT, not at the product)\nTarget geography: Tokyo, Japan\nTarget season: Winter\n- geography: first list the concrete visual cues that indicate a specific location, such as architecture, street layout, script on signage, vegetation, vehicles, cultural details or landmarks. A location can be established by several location-specific cues together; a famous landmark is not required. Next list any cues that point to a different location. Then rate:\n  - strong: several cues specifically indicate the target geography.\n  - weak: the scene is generic and could plausibly be many places.\n  - absent: there are no location cues.\n  - contradictory: cues clearly indicate a different location.\n- season: first list the concrete cues that indicate a season, such as weather, light, vegetation, clothing or decorations. Next list conflicting_cues: elements typical of a different season, each with prominence \"prominent\" (large, central or eye-catching) or \"minor\" (small or peripheral) and a short reason. Then rate strong, weak, absent or contradictory, defined as for geography but for the target season.\n\nReturn only JSON that matches the provided schema.\n\nREFERENCE PROFILE:\n{\n  \"product_category\": \"pair of low-top sneakers\",\n  \"attributes\": [\n    {\n      \"id\": \"silhouette\",\n      \"kind\": \"shape\",\n      \"description\": \"Low-top sneaker silhouette with a rounded toe box, padded tongue/collar, and thick flat rubber cupsole.\"\n    },\n    {\n      \"id\": \"upper\",\n      \"kind\": \"color_material\",\n      \"description\": \"Light sky-blue glossy upper with smooth/patent-like finish.\"\n    },\n    {\n      \"id\": \"sole\",\n      \"kind\": \"color_material\",\n      \"description\": \"Medium-to-dark blue rubber cupsole with a textured/ribbed vertical sidewall.\"\n    },\n    {\n      \"id\": \"laces\",\n      \"kind\": \"color_material\",\n      \"description\": \"Royal-blue flat shoelaces.\"\n    },\n    {\n      \"id\": \"side_emblem\",\n      \"kind\": \"mark\",\n      \"description\": \"Distinctive yellow elongated four-pointed emblem on the lateral side panel. It has a vertically elongated lower point extending downward toward the sole and a shorter horizontal point; its geometry is asymmetric and should not be replaced by a conventional five-point star.\"\n    },\n    {\n      \"id\": \"toe_perforations\",\n      \"kind\": \"detail\",\n      \"description\": \"Multiple small perforation holes arranged in rows across the toe box.\"\n    },\n    {\n      \"id\": \"tongue_tab\",\n      \"kind\": \"detail\",\n      \"description\": \"Small yellow tab/detail near the upper portion of the tongue.\"\n    },\n    {\n      \"id\": \"sole_sidewall_texture\",\n      \"kind\": \"detail\",\n      \"description\": \"Clearly visible ribbed/textured pattern along the blue sole sidewall.\"\n    }\n  ],\n  \"branding\": [\n    {\n      \"id\": \"tongue_label\",\n      \"text\": \"COMET\",\n      \"location\": \"Center area of the tongue patch\"\n    },\n    {\n      \"id\": \"insole_text\",\n      \"text\": \"COMET\",\n      \"location\": \"Printed on the visible insole/inner footbed area\"\n    }\n  ]\n}"
+      },
+      {
+        "type": "text",
+        "text": "REFERENCE IMAGE:"
+      },
+      {
+        "type": "image",
+        "mime_type": "image/jpeg",
+        "base64_chars": 137744
+      },
+      {
+        "type": "text",
+        "text": "GENERATED ADVERTISEMENT:"
+      },
+      {
+        "type": "image",
+        "mime_type": "image/jpeg",
+        "base64_chars": 1077084
+      }
+    ],
+    "response_format": {
+      "type": "text",
+      "mime_type": "application/json",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "schema_version": {
+            "type": "integer"
+          },
+          "text": {
+            "type": "object",
+            "properties": {
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "string"
+                    },
+                    "role": {
+                      "type": "string",
+                      "enum": [
+                        "headline_or_ad_text",
+                        "product_branding",
+                        "background_incidental"
+                      ]
+                    },
+                    "location": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "role",
+                    "location"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "items"
+            ]
+          },
+          "product": {
+            "type": "object",
+            "properties": {
+              "attributes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "enum": [
+                        "silhouette",
+                        "upper",
+                        "sole",
+                        "laces",
+                        "side_emblem",
+                        "toe_perforations",
+                        "tongue_tab",
+                        "sole_sidewall_texture"
+                      ]
+                    },
+                    "evidence": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "preserved",
+                        "altered",
+                        "missing",
+                        "not_visible"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "evidence",
+                    "status"
+                  ]
+                }
+              },
+              "branding": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "enum": [
+                        "tongue_label",
+                        "insole_text"
+                      ]
+                    },
+                    "observed_text": {
+                      "type": "string"
+                    },
+                    "evidence": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "legible_correct",
+                        "legible_different",
+                        "illegible_or_garbled",
+                        "not_visible"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "observed_text",
+                    "evidence",
+                    "status"
+                  ]
+                }
+              },
+              "genuinely_added_marks_or_logos": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string"
+                    },
+                    "location": {
+                      "type": "string"
+                    },
+                    "possible_reference_counterpart_id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "description",
+                    "location",
+                    "possible_reference_counterpart_id"
+                  ]
+                }
+              },
+              "same_product_evidence": {
+                "type": "string"
+              },
+              "same_product": {
+                "type": "string",
+                "enum": [
+                  "yes",
+                  "partially",
+                  "no"
+                ]
+              }
+            },
+            "required": [
+              "attributes",
+              "branding",
+              "genuinely_added_marks_or_logos",
+              "same_product_evidence",
+              "same_product"
+            ]
+          },
+          "context": {
+            "type": "object",
+            "properties": {
+              "geography": {
+                "type": "object",
+                "properties": {
+                  "cues": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "contradicting_cues": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "rating": {
+                    "type": "string",
+                    "enum": [
+                      "strong",
+                      "weak",
+                      "absent",
+                      "contradictory"
+                    ]
+                  }
+                },
+                "required": [
+                  "cues",
+                  "contradicting_cues",
+                  "rating"
+                ]
+              },
+              "season": {
+                "type": "object",
+                "properties": {
+                  "cues": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "conflicting_cues": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "cue": {
+                          "type": "string"
+                        },
+                        "prominence": {
+                          "type": "string",
+                          "enum": [
+                            "prominent",
+                            "minor"
+                          ]
+                        },
+                        "reason": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "cue",
+                        "prominence",
+                        "reason"
+                      ]
+                    }
+                  },
+                  "rating": {
+                    "type": "string",
+                    "enum": [
+                      "strong",
+                      "weak",
+                      "absent",
+                      "contradictory"
+                    ]
+                  }
+                },
+                "required": [
+                  "cues",
+                  "conflicting_cues",
+                  "rating"
+                ]
+              }
+            },
+            "required": [
+              "geography",
+              "season"
+            ]
+          }
+        },
+        "required": [
+          "schema_version",
+          "text",
+          "product",
+          "context"
+        ]
+      }
+    },
+    "store": false
+  },
+  "raw_response": "{\n  \"schema_version\": 1,\n  \"text\": {\n    \"items\": [\n      {\n        \"text\": \"Step Into Winter\",\n        \"role\": \"headline_or_ad_text\",\n        \"location\": \"Upper right quadrant\"\n      },\n      {\n        \"text\": \"JOMET\",\n        \"role\": \"product_branding\",\n        \"location\": \"Tongue tab of the left-most sneaker\"\n      }\n    ]\n  },\n  \"product\": {\n    \"attributes\": [\n      {\n        \"id\": \"silhouette\",\n        \"evidence\": \"Low-top sneaker with rounded toe and rubber cupsole.\",\n        \"status\": \"preserved\"\n      },\n      {\n        \"id\": \"upper\",\n        \"evidence\": \"Light sky-blue glossy material consistent with the reference.\",\n        \"status\": \"preserved\"\n      },\n      {\n        \"id\": \"sole\",\n        \"evidence\": \"Medium-blue rubber cupsole, color matches, but missing the distinctive ribbed/textured vertical sidewall detail.\",\n        \"status\": \"altered\"\n      },\n      {\n        \"id\": \"laces\",\n        \"evidence\": \"Royal-blue flat laces.\",\n        \"status\": \"preserved\"\n      },\n      {\n        \"id\": \"side_emblem\",\n        \"evidence\": \"The emblem is a five-pointed star rather than the reference four-pointed asymmetric emblem.\",\n        \"status\": \"altered\"\n      },\n      {\n        \"id\": \"toe_perforations\",\n        \"evidence\": \"Small holes visible across the toe box.\",\n        \"status\": \"preserved\"\n      },\n      {\n        \"id\": \"tongue_tab\",\n        \"evidence\": \"The tongue tab is present but appears flat and lacks the specific yellow tab detail.\",\n        \"status\": \"altered\"\n      },\n      {\n        \"id\": \"sole_sidewall_texture\",\n        \"evidence\": \"The sidewall is smooth instead of ribbed/textured.\",\n        \"status\": \"missing\"\n      }\n    ],\n    \"branding\": [\n      {\n        \"id\": \"tongue_label\",\n        \"observed_text\": \"JOMET\",\n        \"evidence\": \"Text on the tongue patch is JOMET, not COMET.\",\n        \"status\": \"legible_different\"\n      },\n      {\n        \"id\": \"insole_text\",\n        \"observed_text\": \"\",\n        \"evidence\": \"The inside of the shoes is not visible.\",\n        \"status\": \"not_visible\"\n      }\n    ],\n    \"genuinely_added_marks_or_logos\": [],\n    \"same_product_evidence\": \"The product shares the same colorway and general low-top silhouette but the side emblem shape (five-pointed star vs four-pointed asymmetric star) and branding (JOMET vs COMET) are different.\",\n    \"same_product\": \"partially\"\n  },\n  \"context\": {\n    \"geography\": {\n      \"cues\": [\n        \"Architecture and signage visible through the window suggest an urban setting, possibly East Asian style buildings.\"\n      ],\n      \"contradicting_cues\": [],\n      \"rating\": \"weak\"\n    },\n    \"season\": {\n      \"cues\": [\n        \"Snow on the ground\",\n        \"Frost-covered window glass\",\n        \"Snow particles in the air\"\n      ],\n      \"conflicting_cues\": [\n        {\n          \"cue\": \"Cherry blossoms on the branches outside the window\",\n          \"prominence\": \"prominent\",\n          \"reason\": \"Cherry blossoms are a classic indicator of Spring, not Winter.\"\n        }\n      ],\n      \"rating\": \"contradictory\"\n    }\n  }\n}",
+  "timestamp_utc": "2026-09-26T07:05:39Z",
+  "duration_seconds": 6.619,
+  "sdk_version": "2.25.0"
+}

@@ -1,0 +1,421 @@
+{
+  "schema_version": 1,
+  "rules_version": "1",
+  "policy_snapshot": {
+    "rules_version": "1",
+    "text": {
+      "case_sensitive": true,
+      "required_occurrences": 1,
+      "fail_on_extra_ad_copy": true
+    },
+    "product": {
+      "same_product_fail_codes": {
+        "partially": "PRODUCT_DESIGN_DEVIATION",
+        "no": "PRODUCT_REPLACED"
+      },
+      "critical_attribute_codes": {
+        "mark": {
+          "altered": "PRODUCT_MARK_ALTERED",
+          "missing": "PRODUCT_MARK_MISSING"
+        },
+        "color_material": {
+          "altered": "PRODUCT_COLOR_MATERIAL_ALTERED",
+          "missing": "PRODUCT_COLOR_MATERIAL_ALTERED"
+        },
+        "shape": {
+          "altered": "PRODUCT_SHAPE_ALTERED",
+          "missing": "PRODUCT_SHAPE_ALTERED"
+        },
+        "detail": {
+          "altered": "PRODUCT_DETAIL_ALTERED",
+          "missing": "PRODUCT_DETAIL_ALTERED"
+        }
+      },
+      "branding_fail_statuses": [
+        "legible_different",
+        "illegible_or_garbled"
+      ],
+      "fail_when_all_critical_not_visible": true
+    },
+    "context": {
+      "geography_pass_ratings": [
+        "strong"
+      ],
+      "season_pass_ratings": [
+        "strong"
+      ],
+      "season_conflict_fail_prominence": [
+        "prominent"
+      ]
+    }
+  },
+  "run_dir": "outputs/sneaker-tokyo-winter/20260926T093146_984333Z/attempt-02",
+  "evaluator_model": "gemini-3.1-flash-lite",
+  "profile": {
+    "file": "sneaker.json",
+    "reference_image_sha256": "9bed45b635966ba9f2987c624a6526d6223b3e93b7bb3a6a64a1e5940398030f",
+    "human_verified": true,
+    "verified_by": "Soumik Datta"
+  },
+  "verdict": "PASS",
+  "reasons": [],
+  "error": null,
+  "checks": {
+    "technical": {
+      "verdict": "PASS",
+      "reasons": [],
+      "resolution": [
+        1024,
+        1024
+      ]
+    },
+    "text": {
+      "verdict": "PASS",
+      "reasons": [],
+      "required": "Step Into Winter",
+      "ad_text": "Step Into Winter",
+      "occurrences": 1,
+      "extra_ad_copy": "",
+      "similarity": 1.0
+    },
+    "product": {
+      "verdict": "PASS",
+      "reasons": [],
+      "same_product": "yes",
+      "attributes": {
+        "silhouette": "preserved",
+        "upper": "preserved",
+        "sole": "preserved",
+        "laces": "preserved",
+        "side_emblem": "preserved",
+        "toe_perforations": "preserved",
+        "tongue_tab": "preserved",
+        "sole_sidewall_texture": "preserved"
+      },
+      "branding": {
+        "tongue_label": "legible_correct",
+        "insole_text": "legible_correct"
+      },
+      "recorded": [],
+      "reclassified": []
+    },
+    "context": {
+      "verdict": "PASS",
+      "reasons": [],
+      "geography": {
+        "rating": "strong",
+        "cues": [
+          "Japanese street signage for Shinjuku Sanchome Station",
+          "Braille paving tiles typical of Tokyo sidewalks",
+          "Ginkgo leaves typical of Tokyo urban greenery"
+        ],
+        "contradicting_cues": []
+      },
+      "season": {
+        "rating": "strong",
+        "cues": [
+          "Text says 'Step Into Winter'",
+          "Fall/Winter foliage (ginkgo leaves)",
+          "Pair of winter gloves on the ground"
+        ],
+        "conflicting_cues": []
+      },
+      "recorded": []
+    }
+  },
+  "request_summary": {
+    "model": "gemini-3.1-flash-lite",
+    "input": [
+      {
+        "type": "text",
+        "text": "You are a meticulous visual inspector. You report observations only. You never decide whether an image passes or fails.\n\nYou receive:\n1. REFERENCE IMAGE: the real product.\n2. GENERATED ADVERTISEMENT: an advertisement image that should feature the same product.\n3. REFERENCE PROFILE: a human-verified checklist of the product's attributes and branding (below).\n4. TARGET CONTEXT: the intended geography and season (below).\n\nComplete three independent sections. Do not let your findings in one section influence another.\n\nSECTION \"text\" (look only at the GENERATED ADVERTISEMENT)\n- Transcribe every piece of visible text literally, exactly as it appears, including misspellings, missing or extra letters, unusual capitalization and punctuation. Never correct, complete or guess text.\n- List items in natural reading order (top to bottom, left to right). A single phrase broken across lines is one item; join its lines with a single space.\n- Classify each item's role:\n  - headline_or_ad_text: advertising copy placed on the image (headlines, slogans, prices, calls to action, badges).\n  - product_branding: text physically printed on or attached to the product.\n  - background_incidental: text that belongs to the scene (shop signs, posters, packaging, street signs).\n- If text is present but partly unreadable, transcribe what you can and write \"?\" for each unreadable character.\n- If there is no visible text, return an empty list.\n\nSECTION \"product\" (compare the product in the GENERATED ADVERTISEMENT with the REFERENCE IMAGE, using the REFERENCE PROFILE as the checklist)\n- For every attribute in the profile, using its exact id, give concrete evidence and a status:\n  - preserved: clearly visible and matches the reference.\n  - altered: visible but different in shape, geometry, color, material, position or proportions.\n  - missing: the area where it belongs is visible, but the attribute is absent.\n  - not_visible: that area of the product cannot be seen (angle, cropping, occlusion).\n- For every branding item in the profile, using its exact id, give the text you actually read, concrete evidence and a status:\n  - legible_correct: readable and identical to the profile text.\n  - legible_different: readable but different from the profile text.\n  - illegible_or_garbled: present but distorted, malformed or unreadable.\n  - not_visible: that location cannot be seen.\n- genuinely_added_marks_or_logos: list only marks, logos, symbols or branding ON THE PRODUCT that have no counterpart in the reference. A mark located where a reference mark belongs but looking different is an ALTERED reference attribute: report it under that attribute, not here. If you are unsure whether a mark is an altered reference mark, list it here and set possible_reference_counterpart_id to that attribute's id; otherwise use \"\".\n- same_product: yes (clearly the same product), partially (same type but noticeably different design), no (a different product). Give concrete evidence.\n- Evidence must be specific and checkable, for example \"yellow five-pointed star with a lightning-bolt tail on the side panel\". Never write vague statements such as \"looks similar\" or \"looks appropriate\".\n\nSECTION \"context\" (look only at the scene of the GENERATED ADVERTISEMENT, not at the product)\nTarget geography: Tokyo, Japan\nTarget season: Winter\n- geography: first list the concrete visual cues that indicate a specific location, such as architecture, street layout, script on signage, vegetation, vehicles, cultural details or landmarks. A location can be established by several location-specific cues together; a famous landmark is not required. Next list any cues that point to a different location. Then rate:\n  - strong: several cues specifically indicate the target geography.\n  - weak: the scene is generic and could plausibly be many places.\n  - absent: there are no location cues.\n  - contradictory: cues clearly indicate a different location.\n- season: first list the concrete cues that indicate a season, such as weather, light, vegetation, clothing or decorations. Next list conflicting_cues: elements typical of a different season, each with prominence \"prominent\" (large, central or eye-catching) or \"minor\" (small or peripheral) and a short reason. Then rate strong, weak, absent or contradictory, defined as for geography but for the target season.\n\nReturn only JSON that matches the provided schema.\n\nREFERENCE PROFILE:\n{\n  \"product_category\": \"pair of low-top sneakers\",\n  \"attributes\": [\n    {\n      \"id\": \"silhouette\",\n      \"kind\": \"shape\",\n      \"description\": \"Low-top sneaker silhouette with a rounded toe box, padded tongue/collar, and thick flat rubber cupsole.\"\n    },\n    {\n      \"id\": \"upper\",\n      \"kind\": \"color_material\",\n      \"description\": \"Light sky-blue glossy upper with smooth/patent-like finish.\"\n    },\n    {\n      \"id\": \"sole\",\n      \"kind\": \"color_material\",\n      \"description\": \"Medium-to-dark blue rubber cupsole.\"\n    },\n    {\n      \"id\": \"laces\",\n      \"kind\": \"color_material\",\n      \"description\": \"Royal-blue flat shoelaces.\"\n    },\n    {\n      \"id\": \"side_emblem\",\n      \"kind\": \"mark\",\n      \"description\": \"Distinctive yellow elongated four-pointed emblem on the lateral side panel. It has a vertically elongated lower point extending downward toward the sole and a shorter horizontal point; its geometry is asymmetric and should not be replaced by a conventional five-point star.\"\n    },\n    {\n      \"id\": \"toe_perforations\",\n      \"kind\": \"detail\",\n      \"description\": \"Multiple small perforation holes arranged in rows across the toe box.\"\n    },\n    {\n      \"id\": \"tongue_tab\",\n      \"kind\": \"detail\",\n      \"description\": \"Small yellow tab/detail near the upper portion of the tongue.\"\n    },\n    {\n      \"id\": \"sole_sidewall_texture\",\n      \"kind\": \"detail\",\n      \"description\": \"Clearly visible ribbed/textured pattern along the blue sole sidewall.\"\n    }\n  ],\n  \"branding\": [\n    {\n      \"id\": \"tongue_label\",\n      \"text\": \"COMET\",\n      \"location\": \"Center area of the tongue patch\"\n    },\n    {\n      \"id\": \"insole_text\",\n      \"text\": \"COMET\",\n      \"location\": \"Printed on the visible insole/inner footbed area\"\n    }\n  ]\n}"
+      },
+      {
+        "type": "text",
+        "text": "REFERENCE IMAGE:"
+      },
+      {
+        "type": "image",
+        "mime_type": "image/jpeg",
+        "base64_chars": 137744
+      },
+      {
+        "type": "text",
+        "text": "GENERATED ADVERTISEMENT:"
+      },
+      {
+        "type": "image",
+        "mime_type": "image/png",
+        "base64_chars": 2326364
+      }
+    ],
+    "response_format": {
+      "type": "text",
+      "mime_type": "application/json",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "schema_version": {
+            "type": "integer"
+          },
+          "text": {
+            "type": "object",
+            "properties": {
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "string"
+                    },
+                    "role": {
+                      "type": "string",
+                      "enum": [
+                        "headline_or_ad_text",
+                        "product_branding",
+                        "background_incidental"
+                      ]
+                    },
+                    "location": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "role",
+                    "location"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "items"
+            ]
+          },
+          "product": {
+            "type": "object",
+            "properties": {
+              "attributes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "enum": [
+                        "silhouette",
+                        "upper",
+                        "sole",
+                        "laces",
+                        "side_emblem",
+                        "toe_perforations",
+                        "tongue_tab",
+                        "sole_sidewall_texture"
+                      ]
+                    },
+                    "evidence": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "preserved",
+                        "altered",
+                        "missing",
+                        "not_visible"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "evidence",
+                    "status"
+                  ]
+                }
+              },
+              "branding": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "enum": [
+                        "tongue_label",
+                        "insole_text"
+                      ]
+                    },
+                    "observed_text": {
+                      "type": "string"
+                    },
+                    "evidence": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "legible_correct",
+                        "legible_different",
+                        "illegible_or_garbled",
+                        "not_visible"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "observed_text",
+                    "evidence",
+                    "status"
+                  ]
+                }
+              },
+              "genuinely_added_marks_or_logos": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string"
+                    },
+                    "location": {
+                      "type": "string"
+                    },
+                    "possible_reference_counterpart_id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "description",
+                    "location",
+                    "possible_reference_counterpart_id"
+                  ]
+                }
+              },
+              "same_product_evidence": {
+                "type": "string"
+              },
+              "same_product": {
+                "type": "string",
+                "enum": [
+                  "yes",
+                  "partially",
+                  "no"
+                ]
+              }
+            },
+            "required": [
+              "attributes",
+              "branding",
+              "genuinely_added_marks_or_logos",
+              "same_product_evidence",
+              "same_product"
+            ]
+          },
+          "context": {
+            "type": "object",
+            "properties": {
+              "geography": {
+                "type": "object",
+                "properties": {
+                  "cues": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "contradicting_cues": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "rating": {
+                    "type": "string",
+                    "enum": [
+                      "strong",
+                      "weak",
+                      "absent",
+                      "contradictory"
+                    ]
+                  }
+                },
+                "required": [
+                  "cues",
+                  "contradicting_cues",
+                  "rating"
+                ]
+              },
+              "season": {
+                "type": "object",
+                "properties": {
+                  "cues": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "conflicting_cues": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "cue": {
+                          "type": "string"
+                        },
+                        "prominence": {
+                          "type": "string",
+                          "enum": [
+                            "prominent",
+                            "minor"
+                          ]
+                        },
+                        "reason": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "cue",
+                        "prominence",
+                        "reason"
+                      ]
+                    }
+                  },
+                  "rating": {
+                    "type": "string",
+                    "enum": [
+                      "strong",
+                      "weak",
+                      "absent",
+                      "contradictory"
+                    ]
+                  }
+                },
+                "required": [
+                  "cues",
+                  "conflicting_cues",
+                  "rating"
+                ]
+              }
+            },
+            "required": [
+              "geography",
+              "season"
+            ]
+          }
+        },
+        "required": [
+          "schema_version",
+          "text",
+          "product",
+          "context"
+        ]
+      }
+    },
+    "store": false
+  },
+  "raw_response": "{\n  \"schema_version\": 1,\n  \"text\": {\n    \"items\": [\n      {\n        \"text\": \"Step Into Winter\",\n        \"role\": \"headline_or_ad_text\",\n        \"location\": \"Top center\"\n      },\n      {\n        \"text\": \"COMET\",\n        \"role\": \"product_branding\",\n        \"location\": \"Tongue patch of the left sneaker\"\n      },\n      {\n        \"text\": \"COMET\",\n        \"role\": \"product_branding\",\n        \"location\": \"Insole of the left sneaker\"\n      },\n      {\n        \"text\": \"新宿三丁目駅 Shinjuku Sanchome Stn.\",\n        \"role\": \"background_incidental\",\n        \"location\": \"Top right sign\"\n      },\n      {\n        \"text\": \"新宿三丁目駅\",\n        \"role\": \"background_incidental\",\n        \"location\": \"Top right sign\"\n      }\n    ]\n  },\n  \"product\": {\n    \"attributes\": [\n      {\n        \"id\": \"silhouette\",\n        \"evidence\": \"Low-top sneaker with rounded toe and rubber cupsole\",\n        \"status\": \"preserved\"\n      },\n      {\n        \"id\": \"upper\",\n        \"evidence\": \"Light sky-blue glossy patent finish\",\n        \"status\": \"preserved\"\n      },\n      {\n        \"id\": \"sole\",\n        \"evidence\": \"Medium-blue rubber cupsole\",\n        \"status\": \"preserved\"\n      },\n      {\n        \"id\": \"laces\",\n        \"evidence\": \"Royal-blue flat laces\",\n        \"status\": \"preserved\"\n      },\n      {\n        \"id\": \"side_emblem\",\n        \"evidence\": \"Yellow elongated four-pointed emblem on lateral side\",\n        \"status\": \"preserved\"\n      },\n      {\n        \"id\": \"toe_perforations\",\n        \"evidence\": \"Small holes in rows on the toe box\",\n        \"status\": \"preserved\"\n      },\n      {\n        \"id\": \"tongue_tab\",\n        \"evidence\": \"Small yellow tab on tongue\",\n        \"status\": \"preserved\"\n      },\n      {\n        \"id\": \"sole_sidewall_texture\",\n        \"evidence\": \"Ribbed pattern visible on the blue sole edge\",\n        \"status\": \"preserved\"\n      }\n    ],\n    \"branding\": [\n      {\n        \"id\": \"tongue_label\",\n        \"observed_text\": \"COMET\",\n        \"evidence\": \"Text on the tongue patch\",\n        \"status\": \"legible_correct\"\n      },\n      {\n        \"id\": \"insole_text\",\n        \"observed_text\": \"COMET\",\n        \"evidence\": \"Text on the insole surface\",\n        \"status\": \"legible_correct\"\n      }\n    ],\n    \"genuinely_added_marks_or_logos\": [],\n    \"same_product_evidence\": \"The sneakers in the advertisement match the shape, color, materials, branding, and specific emblem design of the reference sneakers perfectly.\",\n    \"same_product\": \"yes\"\n  },\n  \"context\": {\n    \"geography\": {\n      \"cues\": [\n        \"Japanese street signage for Shinjuku Sanchome Station\",\n        \"Braille paving tiles typical of Tokyo sidewalks\",\n        \"Ginkgo leaves typical of Tokyo urban greenery\"\n      ],\n      \"contradicting_cues\": [],\n      \"rating\": \"strong\"\n    },\n    \"season\": {\n      \"cues\": [\n        \"Text says 'Step Into Winter'\",\n        \"Fall/Winter foliage (ginkgo leaves)\",\n        \"Pair of winter gloves on the ground\"\n      ],\n      \"conflicting_cues\": [],\n      \"rating\": \"strong\"\n    }\n  }\n}",
+  "timestamp_utc": "2026-09-26T09:32:24Z",
+  "duration_seconds": 5.945,
+  "sdk_version": "2.25.0"
+}

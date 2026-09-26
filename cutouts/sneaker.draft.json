@@ -1,0 +1,36 @@
+{
+  "cutout_version": 1,
+  "human_verified": false,
+  "verified_by": "",
+  "verified_at": "",
+  "reference_image": "inputs/products/sneaker.jpg",
+  "reference_image_sha256": "9bed45b635966ba9f2987c624a6526d6223b3e93b7bb3a6a64a1e5940398030f",
+  "reference_size": [
+    720,
+    1280
+  ],
+  "mask_file": "inputs/masks/sneaker_mask.png",
+  "mask_sha256": "d3444cdd4ed66e009899433d460da969cedae6fe90c87800eb9e7fb0ddeae939",
+  "mask_source": "automatic draft by scripts/make_draft_mask.py (Pillow HSV color segmentation, no ML) with packing-tissue removal inside a reviewer-directed box; requires human review",
+  "cutout_file": "sneaker.draft.png",
+  "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+  "crop_box": [
+    57,
+    242,
+    681,
+    1014
+  ],
+  "cutout_size": [
+    624,
+    772
+  ],
+  "opaque_pixels": 310136,
+  "partial_alpha_pixels": 21069,
+  "view": "near_overhead",
+  "created_at": "2026-09-26T09:06:51Z",
+  "review_notes": [
+    "DRAFT built from mask_file (source: automatic draft by scripts/make_draft_mask.py (Pillow HSV color segmentation, no ML) with packing-tissue removal inside a reviewer-directed box; requires human review). Not trusted until a human reviews it.",
+    "Check that only the product is kept (no shoe box, floor or shadows) and edges are clean.",
+    "Check that 'view' describes the camera angle of the reference photo."
+  ]
+}

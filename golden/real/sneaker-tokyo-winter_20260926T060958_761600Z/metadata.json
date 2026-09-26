@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "spec_id": "sneaker-tokyo-winter",
+  "inputs": {
+    "product_image": "inputs/products/sneaker.jpg",
+    "product_image_sha256": "9bed45b635966ba9f2987c624a6526d6223b3e93b7bb3a6a64a1e5940398030f",
+    "product_image_mime_type": "image/jpeg",
+    "geography": "Tokyo, Japan",
+    "season": "Winter",
+    "required_text": "Step Into Winter"
+  },
+  "prompt": "Create a professional display advertisement.\n\nThe attached image shows the reference product. Treat it as the source of truth.\n\nPRODUCT\n- Feature the exact product from the reference image as the clear focal point.\n- Preserve its identity, shape, proportions, materials, colors, and any visible branding, labels, and details.\n- Do not redesign, replace, restyle, or add to the product.\n\nCONTEXT\n- Target geography: Tokyo, Japan\n- Season: Winter\n- Reflect this geography and season naturally through the setting, lighting, props, and atmosphere. Do not alter the product to fit the context.\n\nTEXT\n- Render the following text in the image exactly as written, character for character, exactly once:\n  \"Step Into Winter\"\n- Use a clean, highly legible typeface with strong contrast, placed so it does not cover the product.\n- Do not add any other text, slogans, prices, claims, logos, or watermarks.\n\nSTYLE\n- Polished commercial advertising photography with a balanced composition and clear space for the text.",
+  "model": "gemini-3.1-flash-image",
+  "request": {
+    "api": "interactions.create",
+    "image_size": "1K",
+    "aspect_ratio": "1:1",
+    "response_modalities": [
+      "image",
+      "text"
+    ],
+    "store": false
+  },
+  "response": {
+    "interaction_id": "",
+    "status": "completed",
+    "mime_type": "image/jpeg",
+    "model_text": "I have captured the vibrant colors of your sneakers in a winter-themed setting for the Tokyo market.\n\n"
+  },
+  "output": {
+    "image_file": "ad.jpg",
+    "format": "JPEG",
+    "raw_resolution": [
+      1024,
+      1024
+    ],
+    "saved_resolution": [
+      1024,
+      1024
+    ],
+    "downscaled": false,
+    "max_long_edge": 1024
+  },
+  "warnings": [],
+  "timestamp_utc": "2026-09-26T06:09:58Z",
+  "duration_seconds": 11.933,
+  "sdk_version": "2.25.0"
+}

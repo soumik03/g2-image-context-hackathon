@@ -1,0 +1,30 @@
+{
+  "_note": "TEST FIXTURE ONLY. Mirrors the approved design's example profile; it is not the real approved profile.",
+  "profile_version": 1,
+  "reference_image": "inputs/products/sneaker.jpg",
+  "reference_image_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "human_verified": true,
+  "verified_by": "test-fixture",
+  "verified_at": "2026-09-26",
+  "product_category": "pair of low-top sneakers",
+  "attributes": [
+    {"id": "silhouette", "kind": "shape", "critical": true,
+     "description": "low-top court-style sneaker with a thick flat cupsole"},
+    {"id": "upper", "kind": "color_material", "critical": true,
+     "description": "light sky-blue glossy patent-leather upper"},
+    {"id": "sole", "kind": "color_material", "critical": true,
+     "description": "medium-blue rubber cupsole with a ribbed/textured sidewall"},
+    {"id": "side_emblem", "kind": "mark", "critical": true,
+     "description": "yellow elongated four-pointed star on the lateral side panel; the lower point is much longer"},
+    {"id": "laces", "kind": "color_material", "critical": false,
+     "description": "royal-blue flat laces"},
+    {"id": "toe_perforations", "kind": "detail", "critical": false,
+     "description": "rows of small perforation holes on the toe box"},
+    {"id": "tongue_tab", "kind": "detail", "critical": false,
+     "description": "small yellow tab on the tongue"}
+  ],
+  "branding": [
+    {"id": "tongue_label", "text": "COMET", "critical": true, "location": "tongue label, with a small star icon"},
+    {"id": "insole_logo", "text": "COMET", "critical": false, "location": "printed on the insole"}
+  ]
+}

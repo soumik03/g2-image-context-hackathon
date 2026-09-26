@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "text": {
+    "items": [
+      {
+        "text": "Step Into Wintr",
+        "role": "headline_or_ad_text",
+        "location": "upper right"
+      },
+      {
+        "text": "COMET",
+        "role": "product_branding",
+        "location": "tongue label"
+      }
+    ]
+  },
+  "product": {
+    "attributes": [
+      {
+        "id": "silhouette",
+        "evidence": "low-top sneaker, rounded toe, thick flat cupsole",
+        "status": "preserved"
+      },
+      {
+        "id": "upper",
+        "evidence": "light sky-blue glossy patent-like upper",
+        "status": "preserved"
+      },
+      {
+        "id": "sole",
+        "evidence": "medium-to-dark blue rubber cupsole",
+        "status": "preserved"
+      },
+      {
+        "id": "laces",
+        "evidence": "royal-blue flat laces",
+        "status": "preserved"
+      },
+      {
+        "id": "side_emblem",
+        "evidence": "yellow asymmetric four-pointed emblem with long lower point",
+        "status": "preserved"
+      },
+      {
+        "id": "toe_perforations",
+        "evidence": "rows of small holes on the toe box",
+        "status": "preserved"
+      },
+      {
+        "id": "tongue_tab",
+        "evidence": "small yellow tab near top of tongue",
+        "status": "preserved"
+      },
+      {
+        "id": "sole_sidewall_texture",
+        "evidence": "ribbed pattern along the sole sidewall",
+        "status": "preserved"
+      }
+    ],
+    "branding": [
+      {
+        "id": "tongue_label",
+        "observed_text": "COMET",
+        "evidence": "tongue patch reads COMET",
+        "status": "legible_correct"
+      },
+      {
+        "id": "insole_text",
+        "observed_text": "",
+        "evidence": "insole hidden by the camera angle",
+        "status": "not_visible"
+      }
+    ],
+    "genuinely_added_marks_or_logos": [],
+    "same_product_evidence": "same colorway, silhouette, asymmetric emblem and COMET label",
+    "same_product": "yes"
+  },
+  "context": {
+    "geography": {
+      "cues": [
+        "Japanese-script shop signage",
+        "narrow Tokyo side street with overhead wires",
+        "vending machines on the pavement"
+      ],
+      "contradicting_cues": [],
+      "rating": "strong"
+    },
+    "season": {
+      "cues": [
+        "falling snow",
+        "snow on rooftops",
+        "people in winter coats"
+      ],
+      "conflicting_cues": [],
+      "rating": "strong"
+    }
+  }
+}

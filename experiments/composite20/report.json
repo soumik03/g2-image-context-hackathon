@@ -1,0 +1,489 @@
+{
+  "experiment": "composite20",
+  "strategy": "composite",
+  "max_attempts": 1,
+  "total_outputs": 20,
+  "generation": {
+    "success": 20,
+    "error": 0
+  },
+  "api_calls_live_experiment": {
+    "generator": 20,
+    "evaluator": 20
+  },
+  "avg_generation_seconds": 12.576,
+  "avg_evaluation_seconds": 6.028,
+  "pixel_identity_mismatches_total": 0,
+  "insole_branding_transcriptions": {
+    "COMET -> legible_correct": 11,
+    "comet -> legible_correct": 2,
+    "coMeT -> legible_different": 2,
+    "comet -> legible_different": 2,
+    "COMeT -> legible_different": 1,
+    "coMet -> legible_different": 1,
+    "cOmeT -> legible_different": 1
+  },
+  "original_live_results": {
+    "label": "Original live results (evaluator rules v1, as recorded during the live experiment).",
+    "evaluation": {
+      "success": 20,
+      "error": 0,
+      "not_evaluated": 0
+    },
+    "overall": {
+      "PASS": 9,
+      "FAIL": 11,
+      "ERROR": 0,
+      "pass_rate_of_all": 0.45,
+      "fail_rate_of_all": 0.55,
+      "pass_rate_of_evaluated": 0.45
+    },
+    "checks": {
+      "technical": {
+        "PASS": 20,
+        "FAIL": 0,
+        "evaluated": 20
+      },
+      "product": {
+        "PASS": 13,
+        "FAIL": 7,
+        "evaluated": 20
+      },
+      "context": {
+        "PASS": 15,
+        "FAIL": 5,
+        "evaluated": 20
+      },
+      "text": {
+        "PASS": 20,
+        "FAIL": 0,
+        "evaluated": 20
+      }
+    },
+    "failure_reason_counts": {
+      "PRODUCT_BRANDING_DISTORTED": 7,
+      "CONTEXT_GEO_WEAK": 5
+    },
+    "failed_cases_by_section": {
+      "CONTEXT": 5,
+      "PRODUCT": 7
+    },
+    "evaluator_disagreements": {
+      "count": 0,
+      "cases": []
+    },
+    "per_geography": {
+      "Tokyo, Japan": {
+        "PASS": 3,
+        "FAIL": 1
+      },
+      "Paris, France": {
+        "FAIL": 1,
+        "PASS": 3
+      },
+      "New York, USA": {
+        "FAIL": 3,
+        "PASS": 1
+      },
+      "London, United Kingdom": {
+        "FAIL": 3,
+        "PASS": 1
+      },
+      "Seoul, South Korea": {
+        "FAIL": 3,
+        "PASS": 1
+      }
+    },
+    "per_season": {
+      "Winter": {
+        "PASS": 1,
+        "FAIL": 4
+      },
+      "Spring": {
+        "PASS": 3,
+        "FAIL": 2
+      },
+      "Summer": {
+        "PASS": 4,
+        "FAIL": 1
+      },
+      "Autumn": {
+        "FAIL": 4,
+        "PASS": 1
+      }
+    },
+    "pass_cases": [
+      "exp20-01-tokyo-winter",
+      "exp20-02-tokyo-spring",
+      "exp20-03-tokyo-summer",
+      "exp20-06-paris-spring",
+      "exp20-07-paris-summer",
+      "exp20-08-paris-autumn",
+      "exp20-11-newyork-summer",
+      "exp20-14-london-spring",
+      "exp20-19-seoul-summer"
+    ],
+    "fail_cases": [
+      {
+        "case_id": "exp20-04-tokyo-autumn",
+        "reasons": [
+          "CONTEXT_GEO_WEAK"
+        ]
+      },
+      {
+        "case_id": "exp20-05-paris-winter",
+        "reasons": [
+          "PRODUCT_BRANDING_DISTORTED"
+        ]
+      },
+      {
+        "case_id": "exp20-09-newyork-winter",
+        "reasons": [
+          "PRODUCT_BRANDING_DISTORTED"
+        ]
+      },
+      {
+        "case_id": "exp20-10-newyork-spring",
+        "reasons": [
+          "PRODUCT_BRANDING_DISTORTED"
+        ]
+      },
+      {
+        "case_id": "exp20-12-newyork-autumn",
+        "reasons": [
+          "CONTEXT_GEO_WEAK"
+        ]
+      },
+      {
+        "case_id": "exp20-13-london-winter",
+        "reasons": [
+          "PRODUCT_BRANDING_DISTORTED"
+        ]
+      },
+      {
+        "case_id": "exp20-15-london-summer",
+        "reasons": [
+          "CONTEXT_GEO_WEAK"
+        ]
+      },
+      {
+        "case_id": "exp20-16-london-autumn",
+        "reasons": [
+          "PRODUCT_BRANDING_DISTORTED"
+        ]
+      },
+      {
+        "case_id": "exp20-17-seoul-winter",
+        "reasons": [
+          "PRODUCT_BRANDING_DISTORTED"
+        ]
+      },
+      {
+        "case_id": "exp20-18-seoul-spring",
+        "reasons": [
+          "PRODUCT_BRANDING_DISTORTED",
+          "CONTEXT_GEO_WEAK"
+        ]
+      },
+      {
+        "case_id": "exp20-20-seoul-autumn",
+        "reasons": [
+          "CONTEXT_GEO_WEAK"
+        ]
+      }
+    ],
+    "error_cases": [],
+    "product_fail_audit": [
+      {
+        "case_id": "exp20-05-paris-winter",
+        "pixel_identity_mismatches": 0,
+        "product_reasons": [
+          {
+            "code": "PRODUCT_BRANDING_DISTORTED",
+            "id": "insole_text",
+            "expected": "COMET",
+            "observed_text": "COMeT",
+            "evidence": "Text on insole shows mixed casing/different letter shape ('e' instead of 'E')."
+          }
+        ]
+      },
+      {
+        "case_id": "exp20-09-newyork-winter",
+        "pixel_identity_mismatches": 0,
+        "product_reasons": [
+          {
+            "code": "PRODUCT_BRANDING_DISTORTED",
+            "id": "insole_text",
+            "expected": "COMET",
+            "observed_text": "coMeT",
+            "evidence": "The branding on the insole has mixed/unusual casing."
+          }
+        ]
+      },
+      {
+        "case_id": "exp20-10-newyork-spring",
+        "pixel_identity_mismatches": 0,
+        "product_reasons": [
+          {
+            "code": "PRODUCT_BRANDING_DISTORTED",
+            "id": "insole_text",
+            "expected": "COMET",
+            "observed_text": "coMet",
+            "evidence": "The branding text in the insole uses an unconventional lowercase 'o' and uppercase 'M', whereas the reference uses standard capitalization 'COMET'."
+          }
+        ]
+      },
+      {
+        "case_id": "exp20-13-london-winter",
+        "pixel_identity_mismatches": 0,
+        "product_reasons": [
+          {
+            "code": "PRODUCT_BRANDING_DISTORTED",
+            "id": "insole_text",
+            "expected": "COMET",
+            "observed_text": "comet",
+            "evidence": "Text printed on the insole is lowercase instead of uppercase."
+          }
+        ]
+      },
+      {
+        "case_id": "exp20-16-london-autumn",
+        "pixel_identity_mismatches": 0,
+        "product_reasons": [
+          {
+            "code": "PRODUCT_BRANDING_DISTORTED",
+            "id": "insole_text",
+            "expected": "COMET",
+            "observed_text": "comet",
+            "evidence": "Text is printed on the insole. Reference uses uppercase 'COMET', image shows lowercase 'comet'."
+          }
+        ]
+      },
+      {
+        "case_id": "exp20-17-seoul-winter",
+        "pixel_identity_mismatches": 0,
+        "product_reasons": [
+          {
+            "code": "PRODUCT_BRANDING_DISTORTED",
+            "id": "insole_text",
+            "expected": "COMET",
+            "observed_text": "cOmeT",
+            "evidence": "Text on the insole appears as cOmeT instead of COMET."
+          }
+        ]
+      },
+      {
+        "case_id": "exp20-18-seoul-spring",
+        "pixel_identity_mismatches": 0,
+        "product_reasons": [
+          {
+            "code": "PRODUCT_BRANDING_DISTORTED",
+            "id": "insole_text",
+            "expected": "COMET",
+            "observed_text": "coMeT",
+            "evidence": "The text reads 'coMeT' with a lowercase 'o', uppercase 'M', lowercase 'e', and uppercase 'T', which differs from the reference 'COMET'."
+          }
+        ]
+      }
+    ]
+  },
+  "recomputed_offline_results": {
+    "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+    "rules_version": "2",
+    "api_calls": {
+      "generator": 0,
+      "evaluator": 0
+    },
+    "images_changed": false,
+    "evaluation": {
+      "success": 20,
+      "error": 0,
+      "not_evaluated": 0
+    },
+    "overall": {
+      "PASS": 15,
+      "FAIL": 5,
+      "ERROR": 0,
+      "pass_rate_of_all": 0.75,
+      "fail_rate_of_all": 0.25,
+      "pass_rate_of_evaluated": 0.75
+    },
+    "checks": {
+      "technical": {
+        "PASS": 20,
+        "FAIL": 0,
+        "evaluated": 20
+      },
+      "product": {
+        "PASS": 20,
+        "FAIL": 0,
+        "evaluated": 20
+      },
+      "context": {
+        "PASS": 15,
+        "FAIL": 5,
+        "evaluated": 20
+      },
+      "text": {
+        "PASS": 20,
+        "FAIL": 0,
+        "evaluated": 20
+      }
+    },
+    "failure_reason_counts": {
+      "CONTEXT_GEO_WEAK": 5
+    },
+    "failed_cases_by_section": {
+      "CONTEXT": 5
+    },
+    "evaluator_disagreements": {
+      "count": 7,
+      "cases": [
+        {
+          "case_id": "exp20-05-paris-winter",
+          "code": "PRODUCT_EVALUATOR_DISAGREEMENT",
+          "check": "product",
+          "ai_codes": [
+            "PRODUCT_BRANDING_DISTORTED"
+          ]
+        },
+        {
+          "case_id": "exp20-09-newyork-winter",
+          "code": "PRODUCT_EVALUATOR_DISAGREEMENT",
+          "check": "product",
+          "ai_codes": [
+            "PRODUCT_BRANDING_DISTORTED"
+          ]
+        },
+        {
+          "case_id": "exp20-10-newyork-spring",
+          "code": "PRODUCT_EVALUATOR_DISAGREEMENT",
+          "check": "product",
+          "ai_codes": [
+            "PRODUCT_BRANDING_DISTORTED"
+          ]
+        },
+        {
+          "case_id": "exp20-13-london-winter",
+          "code": "PRODUCT_EVALUATOR_DISAGREEMENT",
+          "check": "product",
+          "ai_codes": [
+            "PRODUCT_BRANDING_DISTORTED"
+          ]
+        },
+        {
+          "case_id": "exp20-16-london-autumn",
+          "code": "PRODUCT_EVALUATOR_DISAGREEMENT",
+          "check": "product",
+          "ai_codes": [
+            "PRODUCT_BRANDING_DISTORTED"
+          ]
+        },
+        {
+          "case_id": "exp20-17-seoul-winter",
+          "code": "PRODUCT_EVALUATOR_DISAGREEMENT",
+          "check": "product",
+          "ai_codes": [
+            "PRODUCT_BRANDING_DISTORTED"
+          ]
+        },
+        {
+          "case_id": "exp20-18-seoul-spring",
+          "code": "PRODUCT_EVALUATOR_DISAGREEMENT",
+          "check": "product",
+          "ai_codes": [
+            "PRODUCT_BRANDING_DISTORTED"
+          ]
+        }
+      ]
+    },
+    "per_geography": {
+      "Tokyo, Japan": {
+        "PASS": 3,
+        "FAIL": 1
+      },
+      "Paris, France": {
+        "PASS": 4
+      },
+      "New York, USA": {
+        "PASS": 3,
+        "FAIL": 1
+      },
+      "London, United Kingdom": {
+        "PASS": 3,
+        "FAIL": 1
+      },
+      "Seoul, South Korea": {
+        "PASS": 2,
+        "FAIL": 2
+      }
+    },
+    "per_season": {
+      "Winter": {
+        "PASS": 5
+      },
+      "Spring": {
+        "PASS": 4,
+        "FAIL": 1
+      },
+      "Summer": {
+        "PASS": 4,
+        "FAIL": 1
+      },
+      "Autumn": {
+        "FAIL": 3,
+        "PASS": 2
+      }
+    },
+    "pass_cases": [
+      "exp20-01-tokyo-winter",
+      "exp20-02-tokyo-spring",
+      "exp20-03-tokyo-summer",
+      "exp20-05-paris-winter",
+      "exp20-06-paris-spring",
+      "exp20-07-paris-summer",
+      "exp20-08-paris-autumn",
+      "exp20-09-newyork-winter",
+      "exp20-10-newyork-spring",
+      "exp20-11-newyork-summer",
+      "exp20-13-london-winter",
+      "exp20-14-london-spring",
+      "exp20-16-london-autumn",
+      "exp20-17-seoul-winter",
+      "exp20-19-seoul-summer"
+    ],
+    "fail_cases": [
+      {
+        "case_id": "exp20-04-tokyo-autumn",
+        "reasons": [
+          "CONTEXT_GEO_WEAK"
+        ]
+      },
+      {
+        "case_id": "exp20-12-newyork-autumn",
+        "reasons": [
+          "CONTEXT_GEO_WEAK"
+        ]
+      },
+      {
+        "case_id": "exp20-15-london-summer",
+        "reasons": [
+          "CONTEXT_GEO_WEAK"
+        ]
+      },
+      {
+        "case_id": "exp20-18-seoul-spring",
+        "reasons": [
+          "CONTEXT_GEO_WEAK"
+        ]
+      },
+      {
+        "case_id": "exp20-20-seoul-autumn",
+        "reasons": [
+          "CONTEXT_GEO_WEAK"
+        ]
+      }
+    ],
+    "error_cases": []
+  }
+}

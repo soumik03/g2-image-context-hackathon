@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "strategy": "composite",
+  "spec_id": "sneaker-tokyo-winter",
+  "inputs": {
+    "product_image": "inputs/products/sneaker.jpg",
+    "product_image_sha256": "9bed45b635966ba9f2987c624a6526d6223b3e93b7bb3a6a64a1e5940398030f",
+    "product_image_mime_type": "image/jpeg",
+    "geography": "Tokyo, Japan",
+    "season": "Winter",
+    "required_text": "Step Into Winter"
+  },
+  "prompt": "Create the background scene for a professional display advertisement: a high-angle photograph shot from almost directly above.\n\nCONTEXT\n- Target geography: Tokyo, Japan\n- Season: Winter\n- Reflect this geography and season naturally through the setting, surface materials, lighting, props and atmosphere, using several location-specific visual cues.\n\nLAYOUT (important)\n- Top band (roughly the top fifth of the image): render the headline text described below.\n- Everything below the top band: a clean, flat, uncluttered surface seen from the same camera angle, leaving a large empty central area where a product will be placed later. Place contextual props only near the edges of the image.\n- Do not include any product, merchandise, packaging or logos in the empty central area.\n\nTEXT\n- Render the following text exactly as written, character for character, exactly once, in the top band:\n  \"Step Into Winter\"\n- Use a clean, highly legible typeface with strong contrast.\n- Do not add any other text, slogans, prices, claims, logos or watermarks.\n\nSTYLE\n- Polished commercial advertising photography with soft, even lighting.\n\nCORRECTIONS FROM PREVIOUS ATTEMPT (attempt 2 of 2)\nThe previous generated image was rejected by automated quality checks. Keep everything that was already correct and fix only the issues below. The attached reference image remains the source of truth for the product.\n- [CONTEXT] The setting did not clearly read as Tokyo, Japan. Observed in the previous generated image: \"Tactile paving surface design (yellow-toned lines/dots on sidewalk) is characteristic of Japan.\". Establish Tokyo, Japan through several location-specific visual cues (for example architecture, street layout, signage script, local details), not a generic scene.",
+  "scene_prompt_sent_with_images": false,
+  "model": "gemini-3.1-flash-image",
+  "request": {
+    "api": "interactions.create",
+    "image_size": "1K",
+    "aspect_ratio": "1:1",
+    "response_modalities": [
+      "image",
+      "text"
+    ],
+    "store": false,
+    "input_parts": [
+      "text"
+    ]
+  },
+  "response": {
+    "interaction_id": "",
+    "status": "completed",
+    "mime_type": "image/jpeg",
+    "model_text": ""
+  },
+  "cutout": {
+    "file": "sneaker.png",
+    "sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+    "reference_image_sha256": "9bed45b635966ba9f2987c624a6526d6223b3e93b7bb3a6a64a1e5940398030f",
+    "view": "near_overhead",
+    "verified_by": "Soumik Datta"
+  },
+  "composite": {
+    "canvas": [
+      1024,
+      1024
+    ],
+    "scene_raw_resolution": [
+      1024,
+      1024
+    ],
+    "scene_resized": false,
+    "placement": {
+      "x": 200,
+      "y": 232,
+      "width": 624,
+      "height": 772
+    },
+    "product_scale": 1.0,
+    "final_resize_factor": 1.0,
+    "shadow": {
+      "offset_x": 0,
+      "offset_y": 10,
+      "blur_radius": 14,
+      "opacity": 0.45
+    },
+    "interior_backing": {
+      "used": true,
+      "note": "All preserved opaque product pixels come directly from the reference cutout; a deterministic interior backing fills the reference photo's non-product cavity where packing tissue was removed.",
+      "cavity_pixels_including_rim": 10867,
+      "cavity_bbox_in_cutout": [
+        61,
+        489,
+        222,
+        580
+      ],
+      "parameters": {
+        "cavity_rule": "cutout pixels with alpha < 128 not connected to the cutout border (enclosed by the product)",
+        "min_cavity_pixels": 64,
+        "grow_px": 2,
+        "colour_top": [
+          34,
+          32,
+          30
+        ],
+        "colour_bottom": [
+          68,
+          64,
+          60
+        ]
+      }
+    }
+  },
+  "pixel_identity": {
+    "checked_opaque_pixels": 310136,
+    "mismatches": 0,
+    "verified_in_saved_png": true
+  },
+  "integration_observation": {
+    "gating": false,
+    "kind": "supplementary engineering metric (deterministic proxies, not a visual judgment)",
+    "lighting_brightness_gap": 9.5,
+    "colour_cast_gap_red_minus_blue": 68.4,
+    "product_height_share": 0.754,
+    "edge_soft_pixel_share": 0.0636,
+    "shadow": {
+      "offset_x": 0,
+      "offset_y": 10,
+      "blur_radius": 14,
+      "opacity": 0.45
+    },
+    "perspective_note": "cutout view is recorded; scene prompt requests the same camera angle"
+  },
+  "output": {
+    "image_file": "ad.png",
+    "scene_file": "scene.jpg",
+    "format": "PNG",
+    "raw_resolution": [
+      1024,
+      1024
+    ],
+    "saved_resolution": [
+      1024,
+      1024
+    ],
+    "downscaled": false,
+    "max_long_edge": 1024
+  },
+  "warnings": [],
+  "timestamp_utc": "2026-09-26T09:32:08Z",
+  "duration_seconds": 11.696,
+  "sdk_version": "2.25.0"
+}

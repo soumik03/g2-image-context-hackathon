@@ -1,0 +1,53 @@
+{
+  "source": "Hand-authored from the human review of outputs/sneaker-tokyo-winter/20260926T060958_761600Z (AGENT_LOG Interactions 7-8). NOT a recorded model response: no evaluator call had been made when this fixture was written. same_product='partially' is the agent's labeling of the observed design change.",
+  "expected_reasons": [
+    "PRODUCT_MARK_ALTERED",
+    "PRODUCT_BRANDING_DISTORTED",
+    "PRODUCT_DESIGN_DEVIATION",
+    "CONTEXT_GEO_WEAK",
+    "CONTEXT_SEASON_CONFLICT"
+  ],
+  "response": {
+    "schema_version": 1,
+    "text": {
+      "items": [
+        {"text": "Step Into Winter", "role": "headline_or_ad_text", "location": "top right, split over two lines"},
+        {"text": "ZOMET", "role": "product_branding", "location": "tongue label"}
+      ]
+    },
+    "product": {
+      "attributes": [
+        {"id": "silhouette", "evidence": "low-top court sneaker with thick flat cupsole", "status": "preserved"},
+        {"id": "upper", "evidence": "light-blue glossy patent upper", "status": "preserved"},
+        {"id": "sole", "evidence": "blue ribbed cupsole", "status": "preserved"},
+        {"id": "side_emblem", "evidence": "yellow five-pointed star with a lightning-bolt tail instead of an elongated four-pointed star", "status": "altered"},
+        {"id": "laces", "evidence": "royal-blue flat laces", "status": "preserved"},
+        {"id": "toe_perforations", "evidence": "perforations visible on toe box", "status": "preserved"},
+        {"id": "tongue_tab", "evidence": "tongue top not clearly visible", "status": "not_visible"}
+      ],
+      "branding": [
+        {"id": "tongue_label", "observed_text": "ZOMET", "evidence": "tongue label lettering malformed", "status": "illegible_or_garbled"},
+        {"id": "insole_logo", "observed_text": "", "evidence": "insole hidden by camera angle", "status": "not_visible"}
+      ],
+      "genuinely_added_marks_or_logos": [
+        {"description": "yellow star-and-lightning-bolt logo on the side panel", "location": "lateral side panel", "possible_reference_counterpart_id": "side_emblem"}
+      ],
+      "same_product_evidence": "same colorway and silhouette but the side emblem design differs",
+      "same_product": "partially"
+    },
+    "context": {
+      "geography": {
+        "cues": ["generic urban night street", "blurred illuminated signage without readable script"],
+        "contradicting_cues": [],
+        "rating": "weak"
+      },
+      "season": {
+        "cues": ["falling snow", "frosted window glass", "snow piles"],
+        "conflicting_cues": [
+          {"cue": "blooming cherry blossoms", "prominence": "prominent", "reason": "cherry blossoms bloom in spring"}
+        ],
+        "rating": "strong"
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "text": {
+    "items": [
+      {
+        "text": "Step Into Wintr",
+        "role": "headline_or_ad_text",
+        "location": "upper right"
+      },
+      {
+        "text": "JOMET",
+        "role": "product_branding",
+        "location": "Tongue tab of the left-most sneaker"
+      }
+    ]
+  },
+  "product": {
+    "attributes": [
+      {
+        "id": "silhouette",
+        "evidence": "Low-top sneaker with rounded toe and rubber cupsole.",
+        "status": "preserved"
+      },
+      {
+        "id": "upper",
+        "evidence": "Light sky-blue glossy material consistent with the reference.",
+        "status": "preserved"
+      },
+      {
+        "id": "sole",
+        "evidence": "Medium-blue rubber cupsole, color matches, but missing the distinctive ribbed/textured vertical sidewall detail.",
+        "status": "altered"
+      },
+      {
+        "id": "laces",
+        "evidence": "Royal-blue flat laces.",
+        "status": "preserved"
+      },
+      {
+        "id": "side_emblem",
+        "evidence": "The emblem is a five-pointed star rather than the reference four-pointed asymmetric emblem.",
+        "status": "altered"
+      },
+      {
+        "id": "toe_perforations",
+        "evidence": "Small holes visible across the toe box.",
+        "status": "preserved"
+      },
+      {
+        "id": "tongue_tab",
+        "evidence": "The tongue tab is present but appears flat and lacks the specific yellow tab detail.",
+        "status": "altered"
+      },
+      {
+        "id": "sole_sidewall_texture",
+        "evidence": "The sidewall is smooth instead of ribbed/textured.",
+        "status": "missing"
+      }
+    ],
+    "branding": [
+      {
+        "id": "tongue_label",
+        "observed_text": "JOMET",
+        "evidence": "Text on the tongue patch is JOMET, not COMET.",
+        "status": "legible_different"
+      },
+      {
+        "id": "insole_text",
+        "observed_text": "",
+        "evidence": "The inside of the shoes is not visible.",
+        "status": "not_visible"
+      }
+    ],
+    "genuinely_added_marks_or_logos": [],
+    "same_product_evidence": "The product shares the same colorway and general low-top silhouette but the side emblem shape (five-pointed star vs four-pointed asymmetric star) and branding (JOMET vs COMET) are different.",
+    "same_product": "partially"
+  },
+  "context": {
+    "geography": {
+      "cues": [
+        "Architecture and signage visible through the window suggest an urban setting, possibly East Asian style buildings."
+      ],
+      "contradicting_cues": [],
+      "rating": "weak"
+    },
+    "season": {
+      "cues": [
+        "Snow on the ground",
+        "Frost-covered window glass",
+        "Snow particles in the air"
+      ],
+      "conflicting_cues": [
+        {
+          "cue": "Cherry blossoms on the branches outside the window",
+          "prominence": "prominent",
+          "reason": "Cherry blossoms are a classic indicator of Spring, not Winter."
+        }
+      ],
+      "rating": "contradictory"
+    }
+  }
+}

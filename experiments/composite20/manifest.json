@@ -1,0 +1,1658 @@
+{
+  "manifest_version": 1,
+  "experiment": "composite20",
+  "description": "~20-output evaluation of the final composite strategy: one approved reference product, 20 geography/season/required_text contexts, max_attempts=1 (no retries).",
+  "strategy": "composite",
+  "max_attempts": 1,
+  "reference_product": "inputs/products/sneaker.jpg",
+  "reference_image_sha256": "9bed45b635966ba9f2987c624a6526d6223b3e93b7bb3a6a64a1e5940398030f",
+  "generator_model": "gemini-3.1-flash-image",
+  "evaluator_model": "gemini-3.1-flash-lite",
+  "budget": {
+    "generator_calls_max": 20,
+    "evaluator_calls_max": 20
+  },
+  "cases": [
+    {
+      "case_id": "exp20-01-tokyo-winter",
+      "geography": "Tokyo, Japan",
+      "season": "Winter",
+      "required_text": "Warm Steps Ahead",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-01-tokyo-winter.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "Tokyo, Japan",
+        "season": "Winter",
+        "required_text": "Warm Steps Ahead"
+      },
+      "run_dir": "outputs/exp20-01-tokyo-winter/20260926T094131_869021Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-01-tokyo-winter/20260926T094131_869021Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 11.854,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 53.5,
+          "colour_cast_gap_red_minus_blue": 115.7,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "duration_seconds": 6.178,
+        "evaluation_file": "outputs/exp20-01-tokyo-winter/20260926T094131_869021Z/attempt-01/evaluation.json"
+      },
+      "status": "PASS",
+      "started_utc": "2026-09-26T09:41:31Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "evaluator_disagreements": [],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-01-tokyo-winter/20260926T094131_869021Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "bf30cc02e8b6aaf8055c2fdf52d9c602456c18c9d6350942d6d136b8e30bac17"
+      }
+    },
+    {
+      "case_id": "exp20-02-tokyo-spring",
+      "geography": "Tokyo, Japan",
+      "season": "Spring",
+      "required_text": "Bloom In Motion",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-02-tokyo-spring.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "Tokyo, Japan",
+        "season": "Spring",
+        "required_text": "Bloom In Motion"
+      },
+      "run_dir": "outputs/exp20-02-tokyo-spring/20260926T094153_664239Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-02-tokyo-spring/20260926T094153_664239Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 11.01,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 5.7,
+          "colour_cast_gap_red_minus_blue": 127.9,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "duration_seconds": 6.114,
+        "evaluation_file": "outputs/exp20-02-tokyo-spring/20260926T094153_664239Z/attempt-01/evaluation.json"
+      },
+      "status": "PASS",
+      "started_utc": "2026-09-26T09:41:53Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "evaluator_disagreements": [],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-02-tokyo-spring/20260926T094153_664239Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "82b6768c39a71a2dca36b544d63ead31503734437a7a79fe0b56709605d5bc8a"
+      }
+    },
+    {
+      "case_id": "exp20-03-tokyo-summer",
+      "geography": "Tokyo, Japan",
+      "season": "Summer",
+      "required_text": "Light On Your Feet",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-03-tokyo-summer.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "Tokyo, Japan",
+        "season": "Summer",
+        "required_text": "Light On Your Feet"
+      },
+      "run_dir": "outputs/exp20-03-tokyo-summer/20260926T094214_408162Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-03-tokyo-summer/20260926T094214_408162Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 11.425,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 26.5,
+          "colour_cast_gap_red_minus_blue": 64.7,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "duration_seconds": 5.852,
+        "evaluation_file": "outputs/exp20-03-tokyo-summer/20260926T094214_408162Z/attempt-01/evaluation.json"
+      },
+      "status": "PASS",
+      "started_utc": "2026-09-26T09:42:14Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "evaluator_disagreements": [],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-03-tokyo-summer/20260926T094214_408162Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "295a7cd059818feffb4491700443461483c74601d7dd6c32b6b092a7197ff930"
+      }
+    },
+    {
+      "case_id": "exp20-04-tokyo-autumn",
+      "geography": "Tokyo, Japan",
+      "season": "Autumn",
+      "required_text": "Fall Into Comfort",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-04-tokyo-autumn.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "Tokyo, Japan",
+        "season": "Autumn",
+        "required_text": "Fall Into Comfort"
+      },
+      "run_dir": "outputs/exp20-04-tokyo-autumn/20260926T094235_481232Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-04-tokyo-autumn/20260926T094235_481232Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 12.01,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 12.0,
+          "colour_cast_gap_red_minus_blue": 135.8,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "FAIL",
+        "reasons": [
+          "CONTEXT_GEO_WEAK"
+        ],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "FAIL"
+        },
+        "duration_seconds": 5.926,
+        "evaluation_file": "outputs/exp20-04-tokyo-autumn/20260926T094235_481232Z/attempt-01/evaluation.json"
+      },
+      "status": "FAIL_EXHAUSTED",
+      "started_utc": "2026-09-26T09:42:35Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "FAIL",
+        "reasons": [
+          "CONTEXT_GEO_WEAK"
+        ],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "FAIL"
+        },
+        "evaluator_disagreements": [],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-04-tokyo-autumn/20260926T094235_481232Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "f0f6ff437c20834732b6d05a2d4f7e7aa72dcf33ddb13a38adfc050724982942"
+      }
+    },
+    {
+      "case_id": "exp20-05-paris-winter",
+      "geography": "Paris, France",
+      "season": "Winter",
+      "required_text": "Winter Walks Await",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-05-paris-winter.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "Paris, France",
+        "season": "Winter",
+        "required_text": "Winter Walks Await"
+      },
+      "run_dir": "outputs/exp20-05-paris-winter/20260926T094257_059622Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-05-paris-winter/20260926T094257_059622Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 16.025,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 16.0,
+          "colour_cast_gap_red_minus_blue": 119.9,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "FAIL",
+        "reasons": [
+          "PRODUCT_BRANDING_DISTORTED"
+        ],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "FAIL",
+          "context": "PASS"
+        },
+        "duration_seconds": 6.667,
+        "evaluation_file": "outputs/exp20-05-paris-winter/20260926T094257_059622Z/attempt-01/evaluation.json"
+      },
+      "status": "FAIL_EXHAUSTED",
+      "started_utc": "2026-09-26T09:42:57Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "evaluator_disagreements": [
+          {
+            "code": "PRODUCT_EVALUATOR_DISAGREEMENT",
+            "check": "product",
+            "ai_codes": [
+              "PRODUCT_BRANDING_DISTORTED"
+            ]
+          }
+        ],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-05-paris-winter/20260926T094257_059622Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "e810fce5a575534f320bd8bfba135909fdf9cd300f25f3a8abb55a6df92410f7"
+      }
+    },
+    {
+      "case_id": "exp20-06-paris-spring",
+      "geography": "Paris, France",
+      "season": "Spring",
+      "required_text": "Fresh Starts Daily",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-06-paris-spring.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "Paris, France",
+        "season": "Spring",
+        "required_text": "Fresh Starts Daily"
+      },
+      "run_dir": "outputs/exp20-06-paris-spring/20260926T094323_657146Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-06-paris-spring/20260926T094323_657146Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 12.342,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 26.1,
+          "colour_cast_gap_red_minus_blue": 80.4,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "duration_seconds": 6.455,
+        "evaluation_file": "outputs/exp20-06-paris-spring/20260926T094323_657146Z/attempt-01/evaluation.json"
+      },
+      "status": "PASS",
+      "started_utc": "2026-09-26T09:43:23Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "evaluator_disagreements": [],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-06-paris-spring/20260926T094323_657146Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "4fee0bd4f95b728ae05da2f2f1b146d19e0a30d898832a24548c13fbe785116d"
+      }
+    },
+    {
+      "case_id": "exp20-07-paris-summer",
+      "geography": "Paris, France",
+      "season": "Summer",
+      "required_text": "Made For Sunny Days",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-07-paris-summer.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "Paris, France",
+        "season": "Summer",
+        "required_text": "Made For Sunny Days"
+      },
+      "run_dir": "outputs/exp20-07-paris-summer/20260926T094346_133733Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-07-paris-summer/20260926T094346_133733Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 11.137,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 24.6,
+          "colour_cast_gap_red_minus_blue": 89.2,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "duration_seconds": 6.353,
+        "evaluation_file": "outputs/exp20-07-paris-summer/20260926T094346_133733Z/attempt-01/evaluation.json"
+      },
+      "status": "PASS",
+      "started_utc": "2026-09-26T09:43:46Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "evaluator_disagreements": [],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-07-paris-summer/20260926T094346_133733Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "78fbb4d26b9cba53383ce32757344798a3575fd62f3de9e6bdc97b817d43fabd"
+      }
+    },
+    {
+      "case_id": "exp20-08-paris-autumn",
+      "geography": "Paris, France",
+      "season": "Autumn",
+      "required_text": "Golden Days Ahead",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-08-paris-autumn.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "Paris, France",
+        "season": "Autumn",
+        "required_text": "Golden Days Ahead"
+      },
+      "run_dir": "outputs/exp20-08-paris-autumn/20260926T094407_271307Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-08-paris-autumn/20260926T094407_271307Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 15.14,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 10.9,
+          "colour_cast_gap_red_minus_blue": 99.9,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "duration_seconds": 5.245,
+        "evaluation_file": "outputs/exp20-08-paris-autumn/20260926T094407_271307Z/attempt-01/evaluation.json"
+      },
+      "status": "PASS",
+      "started_utc": "2026-09-26T09:44:07Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "evaluator_disagreements": [],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-08-paris-autumn/20260926T094407_271307Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "23ce1537e96ff378c3f4ab7e6938969d6440589904dc558b0e6fdfb5055241fc"
+      }
+    },
+    {
+      "case_id": "exp20-09-newyork-winter",
+      "geography": "New York, USA",
+      "season": "Winter",
+      "required_text": "Own The Cold",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-09-newyork-winter.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "New York, USA",
+        "season": "Winter",
+        "required_text": "Own The Cold"
+      },
+      "run_dir": "outputs/exp20-09-newyork-winter/20260926T094431_412781Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-09-newyork-winter/20260926T094431_412781Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 12.409,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 8.8,
+          "colour_cast_gap_red_minus_blue": 59.1,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "FAIL",
+        "reasons": [
+          "PRODUCT_BRANDING_DISTORTED"
+        ],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "FAIL",
+          "context": "PASS"
+        },
+        "duration_seconds": 6.637,
+        "evaluation_file": "outputs/exp20-09-newyork-winter/20260926T094431_412781Z/attempt-01/evaluation.json"
+      },
+      "status": "FAIL_EXHAUSTED",
+      "started_utc": "2026-09-26T09:44:31Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "evaluator_disagreements": [
+          {
+            "code": "PRODUCT_EVALUATOR_DISAGREEMENT",
+            "check": "product",
+            "ai_codes": [
+              "PRODUCT_BRANDING_DISTORTED"
+            ]
+          }
+        ],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-09-newyork-winter/20260926T094431_412781Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "0aeb5d3c1ebb42186ff43b94179bb63a402954869b55e58b2fb25e000036cc90"
+      }
+    },
+    {
+      "case_id": "exp20-10-newyork-spring",
+      "geography": "New York, USA",
+      "season": "Spring",
+      "required_text": "New Season New Pace",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-10-newyork-spring.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "New York, USA",
+        "season": "Spring",
+        "required_text": "New Season New Pace"
+      },
+      "run_dir": "outputs/exp20-10-newyork-spring/20260926T094454_103982Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-10-newyork-spring/20260926T094454_103982Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 11.061,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 6.7,
+          "colour_cast_gap_red_minus_blue": 74.9,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "FAIL",
+        "reasons": [
+          "PRODUCT_BRANDING_DISTORTED"
+        ],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "FAIL",
+          "context": "PASS"
+        },
+        "duration_seconds": 6.792,
+        "evaluation_file": "outputs/exp20-10-newyork-spring/20260926T094454_103982Z/attempt-01/evaluation.json"
+      },
+      "status": "FAIL_EXHAUSTED",
+      "started_utc": "2026-09-26T09:44:54Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "evaluator_disagreements": [
+          {
+            "code": "PRODUCT_EVALUATOR_DISAGREEMENT",
+            "check": "product",
+            "ai_codes": [
+              "PRODUCT_BRANDING_DISTORTED"
+            ]
+          }
+        ],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-10-newyork-spring/20260926T094454_103982Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "272dfb0d62c4ba34aea5ec16acfb310588772069015123f891257bd1924559ce"
+      }
+    },
+    {
+      "case_id": "exp20-11-newyork-summer",
+      "geography": "New York, USA",
+      "season": "Summer",
+      "required_text": "Keep It Moving",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-11-newyork-summer.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "New York, USA",
+        "season": "Summer",
+        "required_text": "Keep It Moving"
+      },
+      "run_dir": "outputs/exp20-11-newyork-summer/20260926T094515_812166Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-11-newyork-summer/20260926T094515_812166Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 11.846,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 31.1,
+          "colour_cast_gap_red_minus_blue": 104.0,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "duration_seconds": 6.484,
+        "evaluation_file": "outputs/exp20-11-newyork-summer/20260926T094515_812166Z/attempt-01/evaluation.json"
+      },
+      "status": "PASS",
+      "started_utc": "2026-09-26T09:45:15Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "evaluator_disagreements": [],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-11-newyork-summer/20260926T094515_812166Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "3401e380e2597a00002cb81fe213729824777f2e51aae2e4907ff708f45f1310"
+      }
+    },
+    {
+      "case_id": "exp20-12-newyork-autumn",
+      "geography": "New York, USA",
+      "season": "Autumn",
+      "required_text": "Step Into Autumn",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-12-newyork-autumn.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "New York, USA",
+        "season": "Autumn",
+        "required_text": "Step Into Autumn"
+      },
+      "run_dir": "outputs/exp20-12-newyork-autumn/20260926T094538_002851Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-12-newyork-autumn/20260926T094538_002851Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 11.416,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 40.5,
+          "colour_cast_gap_red_minus_blue": 113.4,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "FAIL",
+        "reasons": [
+          "CONTEXT_GEO_WEAK"
+        ],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "FAIL"
+        },
+        "duration_seconds": 6.136,
+        "evaluation_file": "outputs/exp20-12-newyork-autumn/20260926T094538_002851Z/attempt-01/evaluation.json"
+      },
+      "status": "FAIL_EXHAUSTED",
+      "started_utc": "2026-09-26T09:45:38Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "FAIL",
+        "reasons": [
+          "CONTEXT_GEO_WEAK"
+        ],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "FAIL"
+        },
+        "evaluator_disagreements": [],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-12-newyork-autumn/20260926T094538_002851Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "658d0b062368123a2d06a968a59aba2b9d407d4ac60621880b9a9ecc342a2746"
+      }
+    },
+    {
+      "case_id": "exp20-13-london-winter",
+      "geography": "London, United Kingdom",
+      "season": "Winter",
+      "required_text": "Cozy City Miles",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-13-london-winter.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "London, United Kingdom",
+        "season": "Winter",
+        "required_text": "Cozy City Miles"
+      },
+      "run_dir": "outputs/exp20-13-london-winter/20260926T094559_512613Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-13-london-winter/20260926T094559_512613Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 16.284,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 35.8,
+          "colour_cast_gap_red_minus_blue": 80.4,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "FAIL",
+        "reasons": [
+          "PRODUCT_BRANDING_DISTORTED"
+        ],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "FAIL",
+          "context": "PASS"
+        },
+        "duration_seconds": 6.064,
+        "evaluation_file": "outputs/exp20-13-london-winter/20260926T094559_512613Z/attempt-01/evaluation.json"
+      },
+      "status": "FAIL_EXHAUSTED",
+      "started_utc": "2026-09-26T09:45:59Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "evaluator_disagreements": [
+          {
+            "code": "PRODUCT_EVALUATOR_DISAGREEMENT",
+            "check": "product",
+            "ai_codes": [
+              "PRODUCT_BRANDING_DISTORTED"
+            ]
+          }
+        ],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-13-london-winter/20260926T094559_512613Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "03e843554c4b1e6599a199f4348de87d6601f14674c5e6cba94f39d74464a43e"
+      }
+    },
+    {
+      "case_id": "exp20-14-london-spring",
+      "geography": "London, United Kingdom",
+      "season": "Spring",
+      "required_text": "Rain Or Shine",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-14-london-spring.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "London, United Kingdom",
+        "season": "Spring",
+        "required_text": "Rain Or Shine"
+      },
+      "run_dir": "outputs/exp20-14-london-spring/20260926T094625_686778Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-14-london-spring/20260926T094625_686778Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 13.072,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 18.1,
+          "colour_cast_gap_red_minus_blue": 67.1,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "duration_seconds": 5.809,
+        "evaluation_file": "outputs/exp20-14-london-spring/20260926T094625_686778Z/attempt-01/evaluation.json"
+      },
+      "status": "PASS",
+      "started_utc": "2026-09-26T09:46:25Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "evaluator_disagreements": [],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-14-london-spring/20260926T094625_686778Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "892dc13b5c9e22192faffff1883bafa1fc6520a1060f1b6d2067e26a899696d5"
+      }
+    },
+    {
+      "case_id": "exp20-15-london-summer",
+      "geography": "London, United Kingdom",
+      "season": "Summer",
+      "required_text": "Long Days Easy Steps",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-15-london-summer.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "London, United Kingdom",
+        "season": "Summer",
+        "required_text": "Long Days Easy Steps"
+      },
+      "run_dir": "outputs/exp20-15-london-summer/20260926T094648_199412Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-15-london-summer/20260926T094648_199412Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 11.965,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 19.9,
+          "colour_cast_gap_red_minus_blue": 98.1,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "FAIL",
+        "reasons": [
+          "CONTEXT_GEO_WEAK"
+        ],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "FAIL"
+        },
+        "duration_seconds": 6.182,
+        "evaluation_file": "outputs/exp20-15-london-summer/20260926T094648_199412Z/attempt-01/evaluation.json"
+      },
+      "status": "FAIL_EXHAUSTED",
+      "started_utc": "2026-09-26T09:46:48Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "FAIL",
+        "reasons": [
+          "CONTEXT_GEO_WEAK"
+        ],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "FAIL"
+        },
+        "evaluator_disagreements": [],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-15-london-summer/20260926T094648_199412Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "2e02a3493a9ddae12050d7a95743ec51ae348d24f790473b745062245e3eb8b6"
+      }
+    },
+    {
+      "case_id": "exp20-16-london-autumn",
+      "geography": "London, United Kingdom",
+      "season": "Autumn",
+      "required_text": "Walk The Season",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-16-london-autumn.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "London, United Kingdom",
+        "season": "Autumn",
+        "required_text": "Walk The Season"
+      },
+      "run_dir": "outputs/exp20-16-london-autumn/20260926T094710_196759Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-16-london-autumn/20260926T094710_196759Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 11.968,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 42.3,
+          "colour_cast_gap_red_minus_blue": 94.3,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "FAIL",
+        "reasons": [
+          "PRODUCT_BRANDING_DISTORTED"
+        ],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "FAIL",
+          "context": "PASS"
+        },
+        "duration_seconds": 5.714,
+        "evaluation_file": "outputs/exp20-16-london-autumn/20260926T094710_196759Z/attempt-01/evaluation.json"
+      },
+      "status": "FAIL_EXHAUSTED",
+      "started_utc": "2026-09-26T09:47:10Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "evaluator_disagreements": [
+          {
+            "code": "PRODUCT_EVALUATOR_DISAGREEMENT",
+            "check": "product",
+            "ai_codes": [
+              "PRODUCT_BRANDING_DISTORTED"
+            ]
+          }
+        ],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-16-london-autumn/20260926T094710_196759Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "78984b3b56b0e144e1f1612053d0c21bb1e8ad8d2d2b8c3e90a5bb14b21ee28b"
+      }
+    },
+    {
+      "case_id": "exp20-17-seoul-winter",
+      "geography": "Seoul, South Korea",
+      "season": "Winter",
+      "required_text": "Stay Warm Stay Bold",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-17-seoul-winter.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "Seoul, South Korea",
+        "season": "Winter",
+        "required_text": "Stay Warm Stay Bold"
+      },
+      "run_dir": "outputs/exp20-17-seoul-winter/20260926T094731_784071Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-17-seoul-winter/20260926T094731_784071Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 16.477,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 51.0,
+          "colour_cast_gap_red_minus_blue": 53.7,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "FAIL",
+        "reasons": [
+          "PRODUCT_BRANDING_DISTORTED"
+        ],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "FAIL",
+          "context": "PASS"
+        },
+        "duration_seconds": 6.232,
+        "evaluation_file": "outputs/exp20-17-seoul-winter/20260926T094731_784071Z/attempt-01/evaluation.json"
+      },
+      "status": "FAIL_EXHAUSTED",
+      "started_utc": "2026-09-26T09:47:31Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "evaluator_disagreements": [
+          {
+            "code": "PRODUCT_EVALUATOR_DISAGREEMENT",
+            "check": "product",
+            "ai_codes": [
+              "PRODUCT_BRANDING_DISTORTED"
+            ]
+          }
+        ],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-17-seoul-winter/20260926T094731_784071Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "861ccf2b17b58e25f6ff804ba95c80e819e3d3f9aabd31da63e5d7852942ed91"
+      }
+    },
+    {
+      "case_id": "exp20-18-seoul-spring",
+      "geography": "Seoul, South Korea",
+      "season": "Spring",
+      "required_text": "Spring Into Style",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-18-seoul-spring.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "Seoul, South Korea",
+        "season": "Spring",
+        "required_text": "Spring Into Style"
+      },
+      "run_dir": "outputs/exp20-18-seoul-spring/20260926T094758_128709Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-18-seoul-spring/20260926T094758_128709Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 11.766,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 34.7,
+          "colour_cast_gap_red_minus_blue": 95.8,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "FAIL",
+        "reasons": [
+          "PRODUCT_BRANDING_DISTORTED",
+          "CONTEXT_GEO_WEAK"
+        ],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "FAIL",
+          "context": "FAIL"
+        },
+        "duration_seconds": 5.784,
+        "evaluation_file": "outputs/exp20-18-seoul-spring/20260926T094758_128709Z/attempt-01/evaluation.json"
+      },
+      "status": "FAIL_EXHAUSTED",
+      "started_utc": "2026-09-26T09:47:58Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "FAIL",
+        "reasons": [
+          "CONTEXT_GEO_WEAK"
+        ],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "FAIL"
+        },
+        "evaluator_disagreements": [
+          {
+            "code": "PRODUCT_EVALUATOR_DISAGREEMENT",
+            "check": "product",
+            "ai_codes": [
+              "PRODUCT_BRANDING_DISTORTED"
+            ]
+          }
+        ],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-18-seoul-spring/20260926T094758_128709Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "f263f0486067c4973a1af42eb0206bec206042b16e9cd83982448e12243a8a63"
+      }
+    },
+    {
+      "case_id": "exp20-19-seoul-summer",
+      "geography": "Seoul, South Korea",
+      "season": "Summer",
+      "required_text": "Cool Summer Moves",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-19-seoul-summer.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "Seoul, South Korea",
+        "season": "Summer",
+        "required_text": "Cool Summer Moves"
+      },
+      "run_dir": "outputs/exp20-19-seoul-summer/20260926T094819_458496Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-19-seoul-summer/20260926T094819_458496Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 11.025,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 24.9,
+          "colour_cast_gap_red_minus_blue": 96.7,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "duration_seconds": 4.44,
+        "evaluation_file": "outputs/exp20-19-seoul-summer/20260926T094819_458496Z/attempt-01/evaluation.json"
+      },
+      "status": "PASS",
+      "started_utc": "2026-09-26T09:48:19Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "PASS",
+        "reasons": [],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "PASS"
+        },
+        "evaluator_disagreements": [],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-19-seoul-summer/20260926T094819_458496Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "2a4dc381ad74225eb30c03631a3697e7f81f4f58dc78ee88bc8d1782b0ccbc31"
+      }
+    },
+    {
+      "case_id": "exp20-20-seoul-autumn",
+      "geography": "Seoul, South Korea",
+      "season": "Autumn",
+      "required_text": "Autumn Starts Here",
+      "reference_product": "inputs/products/sneaker.jpg",
+      "spec_file": "experiments/composite20/specs/exp20-20-seoul-autumn.json",
+      "source": "composite20 experiment: deterministic spec from scripts/run_experiment.py (same product, varied context/text)",
+      "expected_official_inputs": {
+        "product_image": "inputs/products/sneaker.jpg",
+        "geography": "Seoul, South Korea",
+        "season": "Autumn",
+        "required_text": "Autumn Starts Here"
+      },
+      "run_dir": "outputs/exp20-20-seoul-autumn/20260926T094838_463954Z",
+      "generation_result": {
+        "result": "success",
+        "image_file": "outputs/exp20-20-seoul-autumn/20260926T094838_463954Z/attempt-01/ad.png",
+        "saved_resolution": [
+          1024,
+          1024
+        ],
+        "duration_seconds": 11.294,
+        "pixel_identity_mismatches": 0,
+        "interior_backing_used": true,
+        "integration_observation": {
+          "lighting_brightness_gap": 2.4,
+          "colour_cast_gap_red_minus_blue": 94.0,
+          "product_height_share": 0.754
+        }
+      },
+      "evaluation_result": {
+        "verdict": "FAIL",
+        "reasons": [
+          "CONTEXT_GEO_WEAK"
+        ],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "FAIL"
+        },
+        "duration_seconds": 5.489,
+        "evaluation_file": "outputs/exp20-20-seoul-autumn/20260926T094838_463954Z/attempt-01/evaluation.json"
+      },
+      "status": "FAIL_EXHAUSTED",
+      "started_utc": "2026-09-26T09:48:38Z",
+      "api_calls": {
+        "generator": 1,
+        "evaluator": 1
+      },
+      "final_error": null,
+      "recomputed_evaluation": {
+        "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+        "rules_version": "2",
+        "model_call": false,
+        "verdict": "FAIL",
+        "reasons": [
+          "CONTEXT_GEO_WEAK"
+        ],
+        "error": null,
+        "checks": {
+          "technical": "PASS",
+          "text": "PASS",
+          "product": "PASS",
+          "context": "FAIL"
+        },
+        "evaluator_disagreements": [],
+        "pixel_identity": {
+          "passed": true,
+          "checked_opaque_pixels": 310136,
+          "mismatches": 0,
+          "expected_opaque_pixels": 310136,
+          "cutout_sha256": "f69b09cfb9a07843d3ba65278425cab6cd69188cf6c793a7fb0fa5b8a467dd9c",
+          "detail": "all fully opaque approved-cutout pixels are identical in the ad"
+        },
+        "evaluation_file": "outputs/exp20-20-seoul-autumn/20260926T094838_463954Z/attempt-01/evaluation.recomputed.json",
+        "source_evaluation_sha256": "0aa037593dd619fc4b0c595a39dffc4e5539f88b1f9ef0bda212c41a30a75733"
+      }
+    }
+  ],
+  "total_api_calls": {
+    "generator": 20,
+    "evaluator": 20
+  },
+  "recomputation": {
+    "label": "Recomputed offline from the same 20 live experiment artifacts after deterministic composite product-preservation rule.",
+    "api_calls": {
+      "generator": 0,
+      "evaluator": 0
+    },
+    "images_changed": false
+  }
+}

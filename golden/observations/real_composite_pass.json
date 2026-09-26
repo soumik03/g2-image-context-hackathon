@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "text": {
+    "items": [
+      {
+        "text": "Step Into Winter",
+        "role": "headline_or_ad_text",
+        "location": "Top center"
+      },
+      {
+        "text": "COMET",
+        "role": "product_branding",
+        "location": "Tongue patch of the left sneaker"
+      },
+      {
+        "text": "COMET",
+        "role": "product_branding",
+        "location": "Insole of the left sneaker"
+      },
+      {
+        "text": "新宿三丁目駅 Shinjuku Sanchome Stn.",
+        "role": "background_incidental",
+        "location": "Top right sign"
+      },
+      {
+        "text": "新宿三丁目駅",
+        "role": "background_incidental",
+        "location": "Top right sign"
+      }
+    ]
+  },
+  "product": {
+    "attributes": [
+      {
+        "id": "silhouette",
+        "evidence": "Low-top sneaker with rounded toe and rubber cupsole",
+        "status": "preserved"
+      },
+      {
+        "id": "upper",
+        "evidence": "Light sky-blue glossy patent finish",
+        "status": "preserved"
+      },
+      {
+        "id": "sole",
+        "evidence": "Medium-blue rubber cupsole",
+        "status": "preserved"
+      },
+      {
+        "id": "laces",
+        "evidence": "Royal-blue flat laces",
+        "status": "preserved"
+      },
+      {
+        "id": "side_emblem",
+        "evidence": "Yellow elongated four-pointed emblem on lateral side",
+        "status": "preserved"
+      },
+      {
+        "id": "toe_perforations",
+        "evidence": "Small holes in rows on the toe box",
+        "status": "preserved"
+      },
+      {
+        "id": "tongue_tab",
+        "evidence": "Small yellow tab on tongue",
+        "status": "preserved"
+      },
+      {
+        "id": "sole_sidewall_texture",
+        "evidence": "Ribbed pattern visible on the blue sole edge",
+        "status": "preserved"
+      }
+    ],
+    "branding": [
+      {
+        "id": "tongue_label",
+        "observed_text": "COMET",
+        "evidence": "Text on the tongue patch",
+        "status": "legible_correct"
+      },
+      {
+        "id": "insole_text",
+        "observed_text": "COMET",
+        "evidence": "Text on the insole surface",
+        "status": "legible_correct"
+      }
+    ],
+    "genuinely_added_marks_or_logos": [],
+    "same_product_evidence": "The sneakers in the advertisement match the shape, color, materials, branding, and specific emblem design of the reference sneakers perfectly.",
+    "same_product": "yes"
+  },
+  "context": {
+    "geography": {
+      "cues": [
+        "Japanese street signage for Shinjuku Sanchome Station",
+        "Braille paving tiles typical of Tokyo sidewalks",
+        "Ginkgo leaves typical of Tokyo urban greenery"
+      ],
+      "contradicting_cues": [],
+      "rating": "strong"
+    },
+    "season": {
+      "cues": [
+        "Text says 'Step Into Winter'",
+        "Fall/Winter foliage (ginkgo leaves)",
+        "Pair of winter gloves on the ground"
+      ],
+      "conflicting_cues": [],
+      "rating": "strong"
+    }
+  }
+}
