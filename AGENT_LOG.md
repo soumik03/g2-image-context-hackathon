@@ -1442,3 +1442,28 @@ Not started: the 20-image experiment.
 - **Report:** 29 consistency checks passed, covering sums, verdicts vs manifest, the 7 disagreements = the 7 original product FAILs, 20/20 live calls, 0/0 recompute calls, the recomputation label, and version wording.
 
 **Live Gemini calls: 0.**
+
+## Interaction 32 — 2026-09-26 — Final submission polish: static reviewer demo + repository audit
+
+**Instruction:** final submission polish: an optional static reviewer demo and a final repository audit. No Gemini/API calls; no changes to logic or evidence.
+
+**Decisions and changes:**
+- **`demo/index.html`:** created as a read-only reviewer convenience layer.
+  - A single static HTML/CSS file: no scripts, no network, no external assets.
+  - It shows the four inputs, the architecture and the 20-output evidence (values verified against `experiments/composite20/report.json`).
+  - It uses the already-recorded real baseline (`golden/real/sneaker-tokyo-winter_20260926T060958_761600Z/ad.jpg`) and the real composite PASS (`golden/real/sneaker-tokyo-winter_20260926T093146_984333Z_attempt-02/ad.png`).
+- **`README.md`:** a "Reviewer Demo" section was added, and the cutout build command was corrected to pass `--view near_overhead` explicitly.
+
+**Audit:** it checked factual consistency (every number and architecture claim in the demo and README against the report, manifests and golden data), the demo's links and assets, secrets and path hygiene, and the repository scope.
+
+**Issues found and fixed:**
+1. The composite architecture diagram implied the reference image is sent to the scene model. It now shows a product lane (cutout, never sent to the image model) and a text-only context lane merging into the final composite.
+2. The README cutout command was missing `--view near_overhead`.
+
+**Results:**
+- **Tests:** `python -m pytest -q`: **355 passed**.
+- **No changes to:** application logic, evaluator rules, tests, profiles, cutouts, golden data, experiments or generated evidence.
+
+**Human decision:** include the reviewer demo only if the final audit passed. It passed.
+
+**API calls: 0.**

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reviewer Demo</title>
+<!-- Static, read-only reviewer demo. No scripts, no network requests, no API keys.
+     All figures are copied from experiments/composite20/report.json (verified at creation). -->
+<style>
+  :root {
+    --bg: #0d1117; --panel: #161b22; --panel-2: #1c2330; --line: #2d3746;
+    --text: #e6edf3; --muted: #9aa7b4; --accent: #58a6ff;
+    --pass: #3fb950; --fail: #f85149; --warn: #d29922;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 1120px; margin: 0 auto; padding: 32px 16px 48px; }
+  header { padding: 24px 0 8px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+  h1 { font-size: clamp(1.7rem, 4vw, 2.6rem); margin: 0 0 4px; letter-spacing: -0.02em; }
+  .subtitle { color: var(--muted); margin: 0; font-size: 1.05rem; }
+  section { margin-top: 40px; }
+  h2 { font-size: 1.35rem; margin: 0 0 16px; }
+  h2 small { color: var(--muted); font-weight: 400; font-size: 0.9rem; margin-left: 6px; }
+  p { margin: 0 0 12px; }
+  .muted { color: var(--muted); }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+  .grid { display: grid; gap: 16px; }
+  .inputs { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .inputs .card h3 { margin: 0 0 6px; font-size: 1rem; }
+  .inputs img { width: 100%; max-height: 180px; object-fit: contain; border-radius: 8px; background: #0b0f14; }
+  .value { font-family: ui-monospace, Consolas, monospace; color: var(--accent); }
+  .compare { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+  figure { margin: 0; }
+  figure img { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid var(--line); }
+  figcaption { margin-top: 12px; }
+  .badge {
+    display: inline-block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em;
+    padding: 2px 10px; border-radius: 999px; margin-right: 8px; vertical-align: middle;
+  }
+  .b-pass { background: rgba(63,185,80,.15); color: var(--pass); border: 1px solid rgba(63,185,80,.4); }
+  .b-fail { background: rgba(248,81,73,.15); color: var(--fail); border: 1px solid rgba(248,81,73,.4); }
+  .b-info { background: rgba(88,166,255,.12); color: var(--accent); border: 1px solid rgba(88,166,255,.35); }
+  .flow { display: flex; flex-direction: column; align-items: center; gap: 0; }
+  .step {
+    width: min(460px, 100%); text-align: center; background: var(--panel-2);
+    border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px;
+  }
+  .step strong { display: block; }
+  .step span { color: var(--muted); font-size: 0.92rem; }
+  .step.model { border-color: rgba(88,166,255,.5); }
+  .step.det { border-color: rgba(63,185,80,.5); }
+  .arrow { color: var(--muted); font-size: 1.3rem; line-height: 1.6; }
+  .lanes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .lane-title { color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 14px; font-size: .9rem; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; }
+  .callout {
+    margin-top: 16px; text-align: center; font-size: 1.15rem; font-weight: 600;
+    padding: 12px; border-radius: 10px; background: rgba(88,166,255,.08); border: 1px dashed rgba(88,166,255,.4);
+  }
+  .metrics { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .metric { text-align: center; padding: 16px 10px; }
+  .metric .n { font-size: 1.9rem; font-weight: 700; }
+  .metric .l { color: var(--muted); font-size: 0.88rem; }
+  .n.pass { color: var(--pass); } .n.warn { color: var(--warn); }
+  .hero-metric { text-align: center; padding: 22px; margin-bottom: 16px; }
+  .hero-metric .n { font-size: 2.8rem; font-weight: 800; color: var(--pass); }
+  .note { font-size: 0.9rem; color: var(--muted); margin-top: 12px; }
+  ol.why { margin: 0; padding-left: 22px; } ol.why li { margin-bottom: 8px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .links a {
+    color: var(--text); text-decoration: none; background: var(--panel-2); border: 1px solid var(--line);
+    padding: 10px 14px; border-radius: 8px;
+  }
+  .links a:hover { border-color: var(--accent); color: var(--accent); }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>Structured-Context Ad Generation</h1>
+  <p class="subtitle">G2 AI Engineering Hackathon — Problem Statement 2</p>
+</header>
+
+<section>
+  <h2>The problem <small>four official inputs → one display ad (long edge ≤ 1024 px)</small></h2>
+  <div class="grid inputs">
+    <div class="card">
+      <h3>Reference Product Image</h3>
+      <img src="../inputs/products/sneaker.jpg" alt="Reference product photo: a pair of light-blue COMET sneakers">
+    </div>
+    <div class="card"><h3>Geography</h3><p class="value">"Tokyo, Japan"</p><p class="muted">plus Paris, New York, London and Seoul in the 20-output experiment</p></div>
+    <div class="card"><h3>Season</h3><p class="value">"Winter"</p><p class="muted">plus Spring, Summer and Autumn</p></div>
+    <div class="card"><h3>Required Text</h3><p class="value">"Step Into Winter"</p><p class="muted">must appear in the image exactly as written</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>The engineering evolution <small>two real Gemini outputs, same inputs</small></h2>
+  <div class="grid compare">
+    <figure class="card">
+      <img src="../golden/real/sneaker-tokyo-winter_20260926T060958_761600Z/ad.jpg"
+           alt="Baseline redraw output generated by Gemini">
+      <figcaption>
+        <span class="badge b-fail">FAIL</span>
+        <strong>Baseline redraw: the evaluator caught product drift and weak context</strong>
+        <p class="muted">Gemini redrew the whole ad. The side emblem became a star-and-bolt, and the branding was distorted. The evaluator flagged product, geography and season issues; the text passed.</p>
+      </figcaption>
+    </figure>
+    <figure class="card">
+      <img src="../golden/real/sneaker-tokyo-winter_20260926T093146_984333Z_attempt-02/ad.png"
+           alt="Composite output: Gemini-generated Tokyo scene with the exact product pixels composited">
+      <figcaption>
+        <span class="badge b-pass">PASS</span>
+        <strong>Primary composite: exact product pixels preserved, context corrected</strong>
+        <p class="muted">Gemini generated only the scene and the headline; the product comes from the approved cutout. Attempt 1 failed on weak geography. One evidence-driven correction produced this Tokyo scene, which passed all checks.</p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>How the solution works</h2>
+  <div class="card">
+    <div class="lanes">
+      <div class="flow">
+        <div class="lane-title">Product lane: never sent to the image model</div>
+        <div class="step"><strong>Reference product image</strong><span>official input</span></div>
+        <div class="arrow">↓</div>
+        <div class="step det"><strong>Human-approved cutout</strong><span>exact pixels of the reference photo</span></div>
+        <div class="arrow">↓</div>
+        <div class="step det"><strong>Deterministic product preservation</strong><span>native scale, never redrawn</span></div>
+      </div>
+      <div class="flow">
+        <div class="lane-title">Context lane: text-only request</div>
+        <div class="step"><strong>Geography · Season · Required text</strong><span>+ layout and camera instructions</span></div>
+        <div class="arrow">↓</div>
+        <div class="step model"><strong>Gemini 3.1 Flash Image</strong><span>generates the scene</span></div>
+        <div class="arrow">↓</div>
+        <div class="step model"><strong>Scene + headline</strong><span>required text rendered in the image</span></div>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="arrow">↓ ↓</div>
+      <div class="step det"><strong>Final composite</strong><span>scene + preserved product, with a pixel-identity check</span></div>
+      <div class="arrow">↓</div>
+      <div class="step model"><strong>Gemini 3.1 Flash-Lite</strong><span>compares the final ad with the reference and returns structured observations: text, product, context</span></div>
+      <div class="arrow">↓</div>
+      <div class="step det"><strong>Deterministic Python rules</strong><span>versioned policy, reason codes with evidence</span></div>
+      <div class="arrow">↓</div>
+      <div class="step det"><strong>PASS / FAIL / ERROR</strong><span>malformed evaluator output → ERROR, never PASS</span></div>
+      <div class="arrow">↓</div>
+      <div class="step det"><strong>Bounded correction loop</strong><span>on FAIL, a text/context correction goes back to the scene request; at most 3 attempts, no hidden retries</span></div>
+    </div>
+    <p class="note" style="text-align:center">The baseline redraw strategy, kept for comparison, instead sent the reference image to Gemini to redraw the whole ad.</p>
+    <div class="legend">
+      <span><span class="dot" style="background:var(--accent)"></span>model call</span>
+      <span><span class="dot" style="background:var(--pass)"></span>deterministic code</span>
+    </div>
+    <div class="callout">The evaluator observes; Python decides.</div>
+  </div>
+</section>
+
+<section>
+  <h2>20-output evidence <small>5 cities × 4 seasons, one attempt each, no retries</small></h2>
+  <div class="card hero-metric">
+    <div class="n">15 / 20</div>
+    <div>overall PASS under the current rules (v2)</div>
+    <p class="note"><span class="badge b-info">OFFLINE</span>Offline recomputation of the same recorded live artifacts; 0 new API calls.
+      The original live results (rules v1) were 9 / 20 PASS. Both are shown in the experiment report.</p>
+  </div>
+  <div class="grid metrics">
+    <div class="card metric"><div class="n">20</div><div class="l">generated</div></div>
+    <div class="card metric"><div class="n">20</div><div class="l">evaluated</div></div>
+    <div class="card metric"><div class="n pass">0</div><div class="l">errors</div></div>
+    <div class="card metric"><div class="n pass">20/20</div><div class="l">technical</div></div>
+    <div class="card metric"><div class="n pass">20/20</div><div class="l">product (pixel-identity rule)</div></div>
+    <div class="card metric"><div class="n pass">20/20</div><div class="l">text</div></div>
+    <div class="card metric"><div class="n warn">15/20</div><div class="l">context</div></div>
+    <div class="card metric"><div class="n">7</div><div class="l">evaluator disagreements (non-gating, retained)</div></div>
+  </div>
+  <p class="note">All 5 remaining failures are <code>CONTEXT_GEO_WEAK</code>: the scene lacked location-specific cues.
+    The live experiment used exactly 20 generation + 20 evaluator calls.</p>
+</section>
+
+<section>
+  <h2>Why product preservation is deterministic</h2>
+  <div class="card">
+    <ol class="why">
+      <li>The approved product cutout is human-verified and traceable by SHA-256 to the reference photo.</li>
+      <li>Every fully opaque cutout pixel is compared against the final composite: 310,136 pixels, 0 mismatches in all 20 outputs.</li>
+      <li>Pixel identity is authoritative for the preserved product pixels. When the AI evaluator disagrees (for example, by misreading the stylized "COMET" insole print), the disagreement is kept as a recorded observation.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h2>Reviewer quick links</h2>
+  <div class="links">
+    <a href="../README.md">README</a>
+    <a href="../SOLUTION_DETAILS.md">Solution details</a>
+    <a href="../experiments/composite20/report.md">20-output experiment report</a>
+    <a href="../AI_DECLARATION_SUMMARY.md">AI declaration</a>
+    <a href="../AGENT_LOG.md">Agent log</a>
+  </div>
+</section>
+
+<footer>No API key is required to inspect this demo.</footer>
+
+</main>
+</body>
+</html>

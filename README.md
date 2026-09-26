@@ -7,6 +7,10 @@ The pipeline takes **one reference product image + geography + season + required
 - **Design, results, limitations:** [SOLUTION_DETAILS.md](SOLUTION_DETAILS.md)
 - **AI/coding-agent disclosure:** [AI_DECLARATION_SUMMARY.md](AI_DECLARATION_SUMMARY.md) (full trace in [AGENT_LOG.md](AGENT_LOG.md))
 
+## Reviewer Demo
+
+Open [demo/index.html](demo/index.html) directly for a no-setup visual walkthrough of the real baseline failure, the composite PASS, architecture and 20-output evidence.
+
 ## Reviewer Quick Start
 
 **No local setup is required to understand the submission.** All design documents, recorded results and real outputs are committed. Suggested inspection order:
@@ -83,7 +87,7 @@ python -m adgen.evaluator.cli draft-profile inputs/products/sneaker.jpg --name s
 
 # Exact-pixel cutout for the composite strategy: mask → draft → human approval
 python scripts/make_draft_mask.py inputs/products/sneaker.jpg inputs/masks/sneaker_mask.png
-python -m adgen.cutout_cli build inputs/products/sneaker.jpg inputs/masks/sneaker_mask.png --name sneaker --mask-source "..."
+python -m adgen.cutout_cli build inputs/products/sneaker.jpg inputs/masks/sneaker_mask.png --name sneaker --view near_overhead --mask-source "..."
 python -m adgen.cutout_cli approve sneaker --verified-by "<reviewer>"     # only after visual review
 python -m adgen.cutout_cli check inputs/products/sneaker.jpg
 ```
